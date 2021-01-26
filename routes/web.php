@@ -30,3 +30,4 @@ Route::get('/model', function () {
 Route::get('/getlistde', [DethiController::class, 'getListDe']);
 Route::get('/getrandomidde', [PartController::class, 'getRandomIdDe']);
 Route::get('/getoneexam', [PartController::class, 'getRandomAnExam']);
+

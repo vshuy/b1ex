@@ -45,6 +45,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 1)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -68,6 +75,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
@@ -81,6 +89,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 2)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -104,6 +119,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
@@ -117,6 +133,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 3.1)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -140,6 +163,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
@@ -153,6 +177,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 3.2)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -176,6 +207,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
@@ -189,6 +221,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 4)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -212,6 +251,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
@@ -225,6 +265,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 5)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -248,6 +295,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
@@ -261,6 +309,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 6)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -284,6 +339,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
@@ -297,6 +353,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 7)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -320,6 +383,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
@@ -333,6 +397,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 8)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -356,6 +427,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
@@ -369,6 +441,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 9)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -392,6 +471,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
@@ -405,6 +485,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 10)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -428,6 +515,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
@@ -441,6 +529,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 11)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -464,6 +559,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
@@ -477,6 +573,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 12)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -500,6 +603,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
@@ -513,6 +617,13 @@ class PartController extends Controller
             ->where('dethi_id', '=', $idde)
             ->where('ten_phan', '=', 13)
             ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
         $listCauHoiOfPart = DB::table('cauhois')
             ->where('phan_id', '=', $inForPart[0]->id)
             ->get();
@@ -536,6 +647,7 @@ class PartController extends Controller
 
         $result = [
             "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
             "questions" => $listCauHoiOfPart,
             "answers" => $listPhuongAnOfPart,
             "document" => $listTaiLieuOfPart,
