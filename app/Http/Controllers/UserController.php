@@ -9,34 +9,34 @@ class UserController extends Controller
 {
     public function showViewLogin(Request $request)
     {
+        if (Auth::check()) {
+            return redirect()->route('uploadfilepage');
+        } else {
+            return view('login');
+        }
     }
     public function handleLogin(Request $request)
     {
-        echo $request->email . "<br>";
-        echo $request->password . "<br>";
-        echo $request->remember . "<br>";
-        $remember = true;
-        if ($request->remember == true) {
-            $remember = 1;
-        } else {
-            $remember = 0;
-        }
-        echo $remember;
-
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            $inforuser = [
-                "email" => $request->email,
-                "password" => $request->password,
-            ];
-            //echo "Login successfully";
-            //return view('home', ['response' => $response]);
+        if (Auth::check()) {
             return redirect()->route('uploadfilepage');
         } else {
-            echo "login failse";
+            $remember = true;
+            if ($request->remember == true) {
+                $remember = true;
+            } else {
+                $remember = false;
+            }
+            echo $remember;
+            if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember)) {
+                $inforuser = [
+                    "email" => $request->email,
+                    "password" => $request->password,
+                ];
+                return redirect()->route('uploadfilepage');
+            } else {
+                echo "login failse";
+            }
         }
-        //return "run in handle login<br>";
-        //$credentials = $request->only('email', 'password');
-        //echo $credentials;
     }
     public function handleLogout()
     {

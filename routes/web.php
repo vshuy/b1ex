@@ -45,9 +45,6 @@ Route::get('/getpart10', [PartController::class, 'getPart10']);
 Route::get('/getpart11', [PartController::class, 'getPart11']);
 Route::get('/getpart12', [PartController::class, 'getPart12']);
 Route::get('/getpart13', [PartController::class, 'getPart13']);
-Route::get('/login', function () {
-    return view('login');
-})->name('loginpage');
+Route::get('/login', [UserController::class, 'showViewLogin'])->name('loginpage');
 Route::post('/loginrequest', [UserController::class, 'handleLogin'])->name('login');
 Route::get('/logoutrequest', [UserController::class, 'handleLogout'])->name('logout');
-
