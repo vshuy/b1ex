@@ -48,7 +48,6 @@
                 @else
                 <a href="{{route('loginpage')}}"> Login</a>
                 @endif
-
         </div>
     </nav>
     <form action="{{route('uploadfile')}}" method="POST" enctype="multipart/form-data">

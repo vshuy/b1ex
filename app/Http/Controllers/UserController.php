@@ -34,7 +34,7 @@ class UserController extends Controller
                 ];
                 return redirect()->route('uploadfilepage');
             } else {
-                echo "login failse";
+                echo "login failed";
             }
         }
     }

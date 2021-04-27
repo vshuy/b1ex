@@ -45,6 +45,27 @@ Route::get('/getpart10', [PartController::class, 'getPart10']);
 Route::get('/getpart11', [PartController::class, 'getPart11']);
 Route::get('/getpart12', [PartController::class, 'getPart12']);
 Route::get('/getpart13', [PartController::class, 'getPart13']);
+
+Route::get('/getpart1/{id}', [PartController::class, 'getPart1ById']);
+Route::get('/getpart2/{id}', [PartController::class, 'getPart2ById']);
+Route::get('/getpart3.1/{id}', [PartController::class, 'getPart3dot1ById']);
+Route::get('/getpart3.2/{id}', [PartController::class, 'getPart3dot2ById']);
+Route::get('/getpart4/{id}', [PartController::class, 'getPart4ById']);
+Route::get('/getpart5/{id}', [PartController::class, 'getPart5ById']);
+Route::get('/getpart6/{id}', [PartController::class, 'getPart6ById']);
+Route::get('/getpart7/{id}', [PartController::class, 'getPart7ById']);
+Route::get('/getpart8/{id}', [PartController::class, 'getPart8ById']);
+Route::get('/getpart9/{id}', [PartController::class, 'getPart9ById']);
+Route::get('/getpart10/{id}', [PartController::class, 'getPart10ById']);
+Route::get('/getpart11/{id}', [PartController::class, 'getPart11ById']);
+Route::get('/getpart12/{id}', [PartController::class, 'getPart12ById']);
+Route::get('/getpart13/{id}', [PartController::class, 'getPart13ById']);
+
+
 Route::get('/login', [UserController::class, 'showViewLogin'])->name('loginpage');
 Route::post('/loginrequest', [UserController::class, 'handleLogin'])->name('login');
 Route::get('/logoutrequest', [UserController::class, 'handleLogout'])->name('logout');
+
+Route::get('/fblg', function () {
+    return view('welcome');
+});

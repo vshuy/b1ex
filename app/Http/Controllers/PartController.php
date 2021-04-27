@@ -654,4 +654,608 @@ class PartController extends Controller
         ];
         return $result;
     }
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public function getPart1ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 1)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function getPart2ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 2)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function getPart3Dot1ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 3.1)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function getPart3Dot2ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 3.2)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function getPart4ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 4)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function getPart5ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 5)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function getPart6ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 6)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function getPart7ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 7)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function getPart8ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 8)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function getPart9ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 9)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function getPart10ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 10)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function getPart11ById($idde)
+    {
+        $idde = $this->getRandomIdDe();
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 11)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function getPart12ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 12)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function getPart13ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 13)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
 }
