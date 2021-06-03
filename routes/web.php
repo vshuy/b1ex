@@ -72,3 +72,6 @@ Route::get('/loginfacebook', function () {
 Route::get('/resultloginfacebook', function () {
     return view('loginfbsuccess');
 });
+Route::get('/redirectloginfacebook', function () {
+    return view('redirect');
+});
