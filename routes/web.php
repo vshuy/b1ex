@@ -75,3 +75,12 @@ Route::get('/resultloginfacebook', function () {
 Route::get('/redirectloginfacebook', function () {
     return view('redirect');
 });
+Route::get('/policy', function () {
+    echo "policy";
+});
+Route::get('/about', function () {
+    echo "about";
+});
+Route::get('/deletedata', function () {
+    echo "deletedata";
+});
