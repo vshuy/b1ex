@@ -66,6 +66,9 @@ Route::get('/login', [UserController::class, 'showViewLogin'])->name('loginpage'
 Route::post('/loginrequest', [UserController::class, 'handleLogin'])->name('login');
 Route::get('/logoutrequest', [UserController::class, 'handleLogout'])->name('logout');
 
-Route::get('/fblg', function () {
+Route::get('/loginfacebook', function () {
     return view('welcome');
+});
+Route::get('/resultloginfacebook', function () {
+    return view('loginfbsuccess');
 });
