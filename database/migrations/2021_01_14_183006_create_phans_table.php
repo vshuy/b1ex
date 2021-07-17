@@ -19,7 +19,6 @@ class CreatePhansTable extends Migration
             $table->text('ten_phan');
             $table->integer('tailieujpg_id')->unsigned();
             $table->integer('tailieump3_id')->unsigned();
-
         });
     }
 

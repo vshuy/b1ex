@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\DethiController;
-use App\Http\Controllers\PartController;
-use App\Http\Controllers\UploadController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PartController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\DethiController;
+use App\Http\Controllers\FbAuthController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,11 +77,17 @@ Route::get('/redirectloginfacebook', function () {
     return view('redirect');
 });
 Route::get('/policy', function () {
-    echo "policy";
+    return view('policy');
 });
 Route::get('/about', function () {
-    echo "about";
+    return view('about');
 });
 Route::get('/deletedata', function () {
-    echo "deletedata";
+    return view('deletedata');
+});
+Route::post('/checkfbuserid', [FbAuthController::class, 'handleRequest']);
+Route::post('/updatescore', [FbAuthController::class, 'updateScore']);
+Route::post('/deleteaccountbyuserid', [FbAuthController::class, 'deleteUserbyId']);
+Route::post('/anothertoken', function () {
+    echo "token another";
 });

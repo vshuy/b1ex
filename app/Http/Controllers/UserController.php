@@ -43,4 +43,7 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->route('loginpage');
     }
+    public function storageKey(Request $request)
+    {
+    }
 }
