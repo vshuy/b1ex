@@ -24,10 +24,9 @@ Route::get('/', function () {
 })->name('uploadfilepage')->middleware('auth');
 
 Route::post('/uploadfile', [UploadController::class, 'uploadFile'])->name('uploadfile')->middleware('auth');
-
-Route::get('/model', function () {
-    echo "test model<br>";
-});
+Route::get('/dashboard', [PartController::class, 'showListExam'])->name('dashboard')->middleware('auth');
+Route::get('/detailanexamby/{id}', [PartController::class, 'detailAnExam']);
+Route::get('/deleteanexamby/{id}', [PartController::class, 'deleteAnExam'])->middleware('auth');
 
 Route::get('/getlistde', [DethiController::class, 'getListDe']);
 Route::get('/getrandomidde', [PartController::class, 'getRandomIdDe']);
@@ -84,6 +83,9 @@ Route::get('/about', function () {
 });
 Route::get('/deletedata', function () {
     return view('deletedata');
+});
+Route::get('/url', function () {
+    echo url('/');
 });
 Route::post('/checkfbuserid', [FbAuthController::class, 'handleRequest']);
 Route::post('/updatescore', [FbAuthController::class, 'updateScore']);

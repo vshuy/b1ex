@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e1e1e1;">
         <a class="navbar-brand" href="#">
             <div style="font-family: 'Roboto', sans-serif;font-size: 40px;font-weight: 900;color:green;font-style: italic;">
-                B1 Gym</div>
+                B1 EX</div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,6 +29,9 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Giới thiệu</a>

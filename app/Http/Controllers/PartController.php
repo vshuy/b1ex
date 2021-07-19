@@ -8,6 +8,52 @@ use Illuminate\Support\Collection;
 
 class PartController extends Controller
 {
+    public function showListExam()
+    {
+        $listde = dethi::all();
+        return view('dashboard', ['listde' => $listde]);
+    }
+    public function detailAnExam($idde)
+    {
+        // $oneExam = [
+        //     "part1" => $this->getPart1ById($idde),
+        //     "part2" => $this->getPart2ById($idde),
+        //     "part3d1" => $this->getPart3Dot1ById($idde),
+        //     "part3d2" => $this->getPart3Dot2ById($idde),
+        //     "part4" => $this->getPart4ById($idde),
+        //     "part5" => $this->getPart5ById($idde),
+        //     "part6" => $this->getPart6ById($idde),
+        //     "part7" => $this->getPart7ById($idde),
+        //     "part8" => $this->getPart8ById($idde),
+        //     "part9" => $this->getPart9ById($idde),
+        //     "part10" => $this->getPart10ById($idde),
+        //     "part11" => $this->getPart11ById($idde),
+        //     "part12" => $this->getPart12ById($idde),
+        //     "part13" => $this->getPart13ById($idde),
+        // ];
+        $aExam = collect([
+            $this->getPart1ById($idde),
+            $this->getPart2ById($idde),
+            $this->getPart3Dot1ById($idde),
+            $this->getPart3Dot2ById($idde),
+            $this->getPart4ById($idde),
+            $this->getPart5ById($idde),
+            $this->getPart6ById($idde),
+            $this->getPart7ById($idde),
+            $this->getPart8ById($idde),
+            $this->getPart9ById($idde),
+            $this->getPart10ById($idde),
+            $this->getPart11ById($idde),
+            $this->getPart12ById($idde),
+            $this->getPart13ById($idde),
+        ]);
+        //  return $aExam[0]['part'][0]->id;
+        //  return $aExam[0]['questions'][0]->noidung_cauhoi;
+        //    return $aExam[9]['listPartDocumentArray'][1]->url;
+        //    return $aExam[9];
+        // return $aExam->toJson();
+        return view('detailanexam', ['oneExam' => $aExam]);
+    }
     public function getRandomIdDe()
     {
         $randomidade  = DB::table('dethis')
