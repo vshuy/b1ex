@@ -49,6 +49,7 @@
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="container">
+                    {{-- --------------------------------------------------part 1 ok No test this part---------------------------------------- --}}
                     <h2>Chi tiết một đề</h2>
                     <div class="row">
                         <h6>Part1</h6>
@@ -66,7 +67,7 @@
                                         src="{{ url('/') . '/' . $aItem->url }}" alt="error"></div>
                             @endforeach
                         </div>
-                        {{-- ----------------------------------------------------------------------------------------------------------------- --}}
+                        {{-- -----------------------------------------------part 2 ok no test this part------------------------------------------------------------- --}}
                         <h6>Part2</h6>
                         <div class="colsm-12"> <img
                                 src="{{ url('/') . '/' . $oneExam[1]['listPartDocumentArray'][1]->url }}"
@@ -81,7 +82,7 @@
                                 <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
                             @endforeach
                         </div>
-                        {{-- ----------------------------------------------------------------------------------------------------------------- --}}
+                        {{-- -------------------------------------------------part 3.1 ok no test this part------------------------------------------------------------ --}}
                         <h6>Part3.1</h6>
                         <div class="colsm-12"> <img
                                 src="{{ url('/') . '/' . $oneExam[2]['listPartDocumentArray'][1]->url }}"
@@ -96,48 +97,44 @@
                                 <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
                             @endforeach
                         </div>
-                        {{-- ----------------------------------------------------------------------------------------------------------------- --}}
+                        {{-- ---------------------------------------------------Part 3.2 ok no test this part----------------------------------- --}}
                         <h6>Part3.2</h6>
-                        <div class="col-sm-12">
+                        <div class="col-sm-5">
                             <img src="{{ url('/') . '/' . $oneExam[3]['listPartDocumentArray'][1]->url }}"
                                 alt="error">
                         </div>
-                        {{-- <div class="col-sm-6">
+                        <div class="col-sm-7">
                             @foreach ($oneExam[3]['answers'] as $aItem)
-                                <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-5"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
                             @endforeach
-                        </div> --}}
-                        {{-- ----------------------------------------------------------------------------------------------------------------- --}}
+                        </div>
+                        {{-- -----------------------------------------------------Part 4 ok no test this part--------------------------------- --}}
                         <h6>Part4</h6>
                         <div class="colsm-12"> <img
                                 src="{{ url('/') . '/' . $oneExam[4]['listPartDocumentArray'][1]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[4]['questions'] as $aItem)
-                                <div class="mt-5">{{ $loop->iteration }} {{ $aItem->noidung_cauhoi }}</div>
+                                <div class="mt-4">{{ $loop->iteration }} {{ $aItem->noidung_cauhoi }}</div>
                             @endforeach
                         </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[4]['answers'] as $aItem)
-                                <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-0"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
                             @endforeach
                         </div>
-                        {{-- ----------------------------------------------------------------------------------------------------------------- --}}
+                        {{-- ------------------------------------------Part 5 ok no test this part----------------------------------------------- --}}
                         <h6>Part5</h6>
-                        <div class="colsm-12"> <img
+                        <div class="col-sm-6"> <img
                                 src="{{ url('/') . '/' . $oneExam[5]['listPartDocumentArray'][1]->url }}"
                                 alt="error"> </div>
-                        <div class="col-sm-6">
-                            @foreach ($oneExam[5]['questions'] as $aItem)
-                                <div class="mt-5">{{ $loop->iteration }} {{ $aItem->noidung_cauhoi }}</div>
-                            @endforeach
-                        </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[5]['answers'] as $aItem)
                                 <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
                             @endforeach
                         </div>
-                        {{-- ----------------------------------------------------------------------------------------------------------------- --}}
+
+                        {{-- ------------------------------------------Part 6 ok no test this part--------------------------------------- --}}
                         <h6>Part6</h6>
                         <div class="colsm-12"> <img
                                 src="{{ url('/') . '/' . $oneExam[6]['listPartDocumentArray'][1]->url }}"
@@ -152,55 +149,48 @@
                                 <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
                             @endforeach
                         </div>
-                        {{-- ------------------------------------------------------------------------------------------------------------------ --}}
+                        {{-- ----------------------------------------------Part 7 ok no test this part------------------------------------------ --}}
                         <h6>Part7</h6>
-                        <div class="colsm-12"> <img
+                        <div class="col-sm-6"> <img
                                 src="{{ url('/') . '/' . $oneExam[7]['listPartDocumentArray'][1]->url }}"
                                 alt="error"> </div>
-                        <div class="col-sm-6">
-                            @foreach ($oneExam[7]['questions'] as $aItem)
-                                <div class="mt-0">{{ $loop->iteration }} {{ $aItem->noidung_cauhoi }}</div>
-                            @endforeach
-                        </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 mt-5">
                             @foreach ($oneExam[7]['answers'] as $aItem)
-                                <div class="mt-0"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-2"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
                             @endforeach
                         </div>
-                        {{-- ------------------------------------------------------------------------------------------------------------------ --}}
+
+                        {{-- ---------------------------------------------Part 8 ok no test this part--------------------------------------------------------------------- --}}
                         <h6>Part8</h6>
-                        <div class="colsm-12"> <img
+                        <div class="col-sm-5"> <img
                                 src="{{ url('/') . '/' . $oneExam[8]['listPartDocumentArray'][1]->url }}"
                                 alt="error"> </div>
-                        <div class="col-sm-6">
-                            @foreach ($oneExam[8]['questions'] as $aItem)
+                        <div class="col-sm-7">
+                            @foreach ($oneExam[8]['answers'] as $aItem)
+                                <div class="mt-5"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                            @endforeach
+                        </div>
+                        {{-- --------------------------------------------Part 9 OK no test this part----------------------------------------------------------------------- --}}
+                        <h6>Part9</h6>
+                        <div class="col-sm-5"> <img
+                                src="{{ url('/') . '/' . $oneExam[9]['listPartDocumentArray'][1]->url }}"
+                                alt="error"> </div>
+                        <div class="col-sm-7">
+                            @foreach ($oneExam[9]['questions'] as $aItem)
                                 <div class="mt-4">{{ $loop->iteration }} {{ $aItem->noidung_cauhoi }}</div>
                             @endforeach
                         </div>
-                        <div class="col-sm-6">
-                            @foreach ($oneExam[8]['answers'] as $aItem)
-                                <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
-                            @endforeach
-                        </div>
-                        {{-- ------------------------------------------------------------------------------------------------------------------ --}}
-                        <h6>Part9</h6>
-                        <div class="colsm-12"> <img
-                                src="{{ url('/') . '/' . $oneExam[9]['listPartDocumentArray'][1]->url }}"
-                                alt="error"> </div>
-                        <div class="col-sm-6">
-                            @foreach ($oneExam[9]['questions'] as $aItem)
-                                <div class="mt-0">{{ $loop->iteration }} {{ $aItem->noidung_cauhoi }}</div>
-                            @endforeach
-                        </div>
-                        <div class="col-sm-6">
-                            @foreach ($oneExam[9]['document'] as $aItem)
-                                <div class="mt-3"> {{ $loop->iteration }} <img
-                                        src="{{ url('/') . '/' . $aItem->url }}" alt="error"></div>
-                            @endforeach
+                        <div class="container">
+                            <div class="row">
+                                @foreach ($oneExam[9]['document'] as $aItem)
+                                    <div class="col-4"> {{ $loop->iteration }} <img
+                                            src="{{ url('/') . '/' . $aItem->url }}" alt="error"></div>
+                                @endforeach
+                            </div>
                         </div>
                         {{-- ----------------------------------------------Part 10----OK no test this part---------------------------------------------------------------- --}}
                         <h6>Part10</h6>
-                        <div class="colsm-12"> <img
+                        <div class="col-sm-12"> <img
                                 src="{{ url('/') . '/' . $oneExam[10]['listPartDocumentArray'][1]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
@@ -213,51 +203,42 @@
                                 <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
                             @endforeach
                         </div>
-                        {{-- ------------------------------------------------------------------------------------------------------------------ --}}
+                        {{-- -----------------------------------------------Part 11---Ok no test this part---------------------------------------- --}}
                         <h6>Part11</h6>
-                        <div class="colsm-12"> <img
+                        <div class="col-sm-12"> <img
                                 src="{{ url('/') . '/' . $oneExam[11]['listPartDocumentArray'][1]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[11]['questions'] as $aItem)
-                                <div class="mt-4">{{ $loop->iteration }} {{ $aItem->noidung_cauhoi }}</div>
+                                <div class="mt-5">{{ $loop->iteration }} {{ $aItem->noidung_cauhoi }}</div>
                             @endforeach
                         </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[11]['answers'] as $aItem)
-                                <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
                             @endforeach
                         </div>
-                        {{-- ------------------------------------------------------------------------------------------------------------------ --}}
+                        {{-- --------------------------------------------------Part 12 ok no test this part----------------------------------- --}}
                         <h6>Part12</h6>
-                        <div class="colsm-12"> <img
+                        <div class="col-sm-6"> <img
                                 src="{{ url('/') . '/' . $oneExam[12]['listPartDocumentArray'][1]->url }}"
                                 alt="error"> </div>
-                        <div class="col-sm-6">
-                            @foreach ($oneExam[12]['questions'] as $aItem)
-                                <div class="mt-4">{{ $loop->iteration }} {{ $aItem->noidung_cauhoi }}</div>
-                            @endforeach
-                        </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 mt-5">
                             @foreach ($oneExam[12]['answers'] as $aItem)
                                 <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
                             @endforeach
                         </div>
                         {{-- ------------------------------------------------------------------------------------------------------------------ --}}
                         <h6>Part13</h6>
-                        <div class="colsm-12"> <img
+                        <div class="col-sm-6"> <img
                                 src="{{ url('/') . '/' . $oneExam[13]['listPartDocumentArray'][1]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
-                            @foreach ($oneExam[13]['questions'] as $aItem)
-                                <div class="mt-4">{{ $loop->iteration }} {{ $aItem->noidung_cauhoi }}</div>
-                            @endforeach
-                        </div>
-                        <div class="col-sm-6">
                             @foreach ($oneExam[13]['answers'] as $aItem)
-                                <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-5"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
                             @endforeach
                         </div>
+
                     </div>
                 </div>
             </main>
