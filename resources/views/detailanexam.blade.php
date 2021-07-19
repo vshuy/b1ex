@@ -235,7 +235,7 @@
                                 alt="error"> </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[13]['answers'] as $aItem)
-                                <div class="mt-5"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
                             @endforeach
                         </div>
 
