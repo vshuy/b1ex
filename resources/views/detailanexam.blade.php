@@ -174,7 +174,13 @@
                         <h6>Part9</h6>
                         <div class="col-sm-5"> <img
                                 src="{{ url('/') . '/' . $oneExam[9]['listPartDocumentArray'][1]->url }}"
-                                alt="error"> </div>
+                                alt="error">
+                            <audio controls>
+                                <source src="{{ url('/') . '/' . $oneExam[9]['listPartDocumentArray'][0]->url }}"
+                                    type="
+                                    audio/mpeg">
+                            </audio>
+                        </div>
                         <div class="col-sm-7">
                             @foreach ($oneExam[9]['questions'] as $aItem)
                                 <div class="mt-4">{{ $loop->iteration }} {{ $aItem->noidung_cauhoi }}</div>
@@ -192,7 +198,13 @@
                         <h6>Part10</h6>
                         <div class="col-sm-12"> <img
                                 src="{{ url('/') . '/' . $oneExam[10]['listPartDocumentArray'][1]->url }}"
-                                alt="error"> </div>
+                                alt="error">
+                            <audio controls>
+                                <source src="{{ url('/') . '/' . $oneExam[10]['listPartDocumentArray'][0]->url }}"
+                                    type="
+                                        audio/mpeg">
+                            </audio>
+                        </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[10]['questions'] as $aItem)
                                 <div class="mt-1">{{ $loop->iteration }} {{ $aItem->noidung_cauhoi }}</div>
@@ -207,7 +219,13 @@
                         <h6>Part11</h6>
                         <div class="col-sm-12"> <img
                                 src="{{ url('/') . '/' . $oneExam[11]['listPartDocumentArray'][1]->url }}"
-                                alt="error"> </div>
+                                alt="error">
+                            <audio controls>
+                                <source src="{{ url('/') . '/' . $oneExam[11]['listPartDocumentArray'][0]->url }}"
+                                    type="
+                                        audio/mpeg">
+                            </audio>
+                        </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[11]['questions'] as $aItem)
                                 <div class="mt-5">{{ $loop->iteration }} {{ $aItem->noidung_cauhoi }}</div>
@@ -222,7 +240,13 @@
                         <h6>Part12</h6>
                         <div class="col-sm-6"> <img
                                 src="{{ url('/') . '/' . $oneExam[12]['listPartDocumentArray'][1]->url }}"
-                                alt="error"> </div>
+                                alt="error">
+                            <audio controls>
+                                <source src="{{ url('/') . '/' . $oneExam[12]['listPartDocumentArray'][0]->url }}"
+                                    type="
+                                        audio/mpeg">
+                            </audio>
+                        </div>
                         <div class="col-sm-6 mt-5">
                             @foreach ($oneExam[12]['answers'] as $aItem)
                                 <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
@@ -232,7 +256,13 @@
                         <h6>Part13</h6>
                         <div class="col-sm-6"> <img
                                 src="{{ url('/') . '/' . $oneExam[13]['listPartDocumentArray'][1]->url }}"
-                                alt="error"> </div>
+                                alt="error">
+                            <audio controls>
+                                <source src="{{ url('/') . '/' . $oneExam[13]['listPartDocumentArray'][0]->url }}"
+                                    type="
+                                        audio/mpeg">
+                            </audio>
+                        </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[13]['answers'] as $aItem)
                                 <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>

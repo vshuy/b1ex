@@ -15,22 +15,6 @@ class PartController extends Controller
     }
     public function detailAnExam($idde)
     {
-        // $oneExam = [
-        //     "part1" => $this->getPart1ById($idde),
-        //     "part2" => $this->getPart2ById($idde),
-        //     "part3d1" => $this->getPart3Dot1ById($idde),
-        //     "part3d2" => $this->getPart3Dot2ById($idde),
-        //     "part4" => $this->getPart4ById($idde),
-        //     "part5" => $this->getPart5ById($idde),
-        //     "part6" => $this->getPart6ById($idde),
-        //     "part7" => $this->getPart7ById($idde),
-        //     "part8" => $this->getPart8ById($idde),
-        //     "part9" => $this->getPart9ById($idde),
-        //     "part10" => $this->getPart10ById($idde),
-        //     "part11" => $this->getPart11ById($idde),
-        //     "part12" => $this->getPart12ById($idde),
-        //     "part13" => $this->getPart13ById($idde),
-        // ];
         $aExam = collect([
             $this->getPart1ById($idde),
             $this->getPart2ById($idde),
@@ -49,10 +33,56 @@ class PartController extends Controller
         ]);
         //  return $aExam[0]['part'][0]->id;
         //  return $aExam[0]['questions'][0]->noidung_cauhoi;
-        //    return $aExam[9]['listPartDocumentArray'][1]->url;
+            // return $aExam[9]['listPartDocumentArray'][0]->url;
         //    return $aExam[9];
         // return $aExam->toJson();
         return view('detailanexam', ['oneExam' => $aExam]);
+    }
+    public function deletePart1ById($idde)
+    {
+        $inForPart = DB::table('phans')
+            ->where('dethi_id', '=', $idde)
+            ->where('ten_phan', '=', 9)
+            ->get();
+        $idPartDocumentArray = [];
+        $idPartDocumentArray[] = $inForPart[0]->tailieujpg_id;
+        $idPartDocumentArray[] = $inForPart[0]->tailieump3_id;
+        $listPartDocumentArray = DB::table('tailieus')
+            ->select(['url', 'kieutl'])
+            ->whereIn('id', $idPartDocumentArray)
+            ->get();
+        $listCauHoiOfPart = DB::table('cauhois')
+            ->where('phan_id', '=', $inForPart[0]->id)
+            ->get();
+        $idCauhoiArray = [];
+        foreach ($listCauHoiOfPart as $aCauhoi) {
+            $idCauhoiArray[] = $aCauhoi->id;
+        }
+
+        $listPhuongAnOfPart = DB::table('phuongans')
+            ->whereIn('cauhoi_id', $idCauhoiArray)
+            ->get();
+
+        $idTaiLieuArray = [];
+        foreach ($listPhuongAnOfPart as $aPhuongAn) {
+            $idTaiLieuArray[] = $aPhuongAn->tailieu_id;
+        }
+
+        $listTaiLieuOfPart = DB::table('tailieus')
+            ->whereIn('id', $idTaiLieuArray)
+            ->get();
+
+        $result = [
+            "part" => $inForPart,
+            "listPartDocumentArray" => $listPartDocumentArray,
+            "questions" => $listCauHoiOfPart,
+            "answers" => $listPhuongAnOfPart,
+            "document" => $listTaiLieuOfPart,
+        ];
+        return $result;
+    }
+    public function deleteAnExamById()
+    {
     }
     public function getRandomIdDe()
     {

@@ -26,7 +26,7 @@ Route::get('/', function () {
 Route::post('/uploadfile', [UploadController::class, 'uploadFile'])->name('uploadfile')->middleware('auth');
 Route::get('/dashboard', [PartController::class, 'showListExam'])->name('dashboard')->middleware('auth');
 Route::get('/detailanexamby/{id}', [PartController::class, 'detailAnExam']);
-Route::get('/deleteanexamby/{id}', [PartController::class, 'deleteAnExam'])->middleware('auth');
+Route::get('/deleteanexamby/{id}', [PartController::class, 'deletePart1ById'])->middleware('auth');
 
 Route::get('/getlistde', [DethiController::class, 'getListDe']);
 Route::get('/getrandomidde', [PartController::class, 'getRandomIdDe']);
