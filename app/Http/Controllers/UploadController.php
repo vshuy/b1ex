@@ -11,5 +11,6 @@ class UploadController extends Controller
     {
         $HandleSheetOB = new ReadSheetExcel();
         $HandleSheetOB->handleSheet($request);
+        return redirect()->route('dashboard');
     }
 }

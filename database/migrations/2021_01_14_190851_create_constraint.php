@@ -15,16 +15,23 @@ class CreateConstraint extends Migration
     {
 
         Schema::table('phans', function ($table) {
-            $table->foreign('dethi_id')->references('id')->on('dethis');
-            $table->foreign('tailieujpg_id')->references('id')->on('tailieus');
-            $table->foreign('tailieump3_id')->references('id')->on('tailieus');
+            $table->foreign('dethi_id')
+                ->references('id')
+                ->on('dethis')
+                ->onDelete('cascade');
         });
         Schema::table('cauhois', function ($table) {
-            $table->foreign('phan_id')->references('id')->on('phans');
+            $table->foreign('phan_id')
+                ->references('id')->on('phans')
+                ->onDelete('cascade');
         });
         Schema::table('phuongans', function ($table) {
-            $table->foreign('cauhoi_id')->references('id')->on('cauhois');
-            $table->foreign('tailieu_id')->references('id')->on('tailieus');
+            $table->foreign('cauhoi_id')
+                ->references('id')
+                ->on('cauhois')
+                ->onDelete('cascade');
+        });
+        Schema::table('tailieus', function ($table) {
         });
     }
 

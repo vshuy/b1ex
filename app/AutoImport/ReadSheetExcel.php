@@ -17,7 +17,7 @@ class ReadSheetExcel
         $pathtmp = "app/" . $fileexcel->store('excelsource');
         $path = storage_path($pathtmp);
         $spreadsheet = IOFactory::load($path);
-        echo "Running in ReadSheetExcel class HandleSheet function<br>";
+        // echo "Running in ReadSheetExcel class HandleSheet function<br>";
         $workSheet = $spreadsheet->getActiveSheet();
         $highestRow = $workSheet->getHighestRow();
         $highestColumn = $workSheet->getHighestColumn();

@@ -27,6 +27,6 @@ class CreateCauhoisTable extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('cauhois');
+        Schema::dropIfExists('cauhois');
     }
 }

@@ -10,7 +10,7 @@ class UserController extends Controller
     public function showViewLogin(Request $request)
     {
         if (Auth::check()) {
-            return redirect()->route('uploadfilepage');
+            return redirect()->route('dashboard');
         } else {
             return view('login');
         }
@@ -18,7 +18,7 @@ class UserController extends Controller
     public function handleLogin(Request $request)
     {
         if (Auth::check()) {
-            return redirect()->route('uploadfilepage');
+            return redirect()->route('dashboard');
         } else {
             $remember = true;
             if ($request->remember == true) {
@@ -32,7 +32,7 @@ class UserController extends Controller
                     "email" => $request->email,
                     "password" => $request->password,
                 ];
-                return redirect()->route('uploadfilepage');
+                return redirect()->route('dashboard');
             } else {
                 echo "login failed";
             }
