@@ -87,7 +87,7 @@ Route::get('/deletedata', function () {
 Route::get('/url', function () {
     echo url('/');
 });
-Route::post('/checkfbuserid', [FbAuthController::class, 'handleRequest']);
+Route::get('/checkfbuserid', [FbAuthController::class, 'handleRequest']);
 Route::post('/updatescore', [FbAuthController::class, 'updateScore']);
 Route::post('/deleteaccountbyuserid', [FbAuthController::class, 'deleteUserbyId']);
 Route::post('/anothertoken', function () {
