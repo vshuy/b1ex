@@ -11,6 +11,14 @@ class FbAuthController extends Controller
 {
     public function handleRequest(Request $request)
     {
+        // $tmp = [
+        //     $request->id_user,
+        //     $request->access_token
+        //     // $request->$request->expiresIn
+        // ];
+
+        // return $tmp;
+
         if (DB::table('fbaccesses')->where('user_id', $request->id_user)->exists()) {
             DB::table('fbaccesses')
                 ->where('user_id', $request->id_user)
