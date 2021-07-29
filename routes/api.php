@@ -54,6 +54,7 @@ Route::get('/getpart10/{id}', [PartController::class, 'getPart10ById']);
 Route::get('/getpart11/{id}', [PartController::class, 'getPart11ById']);
 Route::get('/getpart12/{id}', [PartController::class, 'getPart12ById']);
 Route::get('/getpart13/{id}', [PartController::class, 'getPart13ById']);
+Route::get('/getoneexam/{id}', [PartController::class, 'getOneExamById']);
 
 // facebook auth api gate way
 Route::get('/checkfbuserid', [FbAuthController::class, 'handleRequest']);

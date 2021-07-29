@@ -2216,4 +2216,24 @@ class PartController extends Controller
         ];
         return $result;
     }
+    public function getOneExamById($idde)
+    {
+        $oneExam = [
+            "part1" => $this->getPart1ById($idde),
+            "part2" => $this->getPart2ById($idde),
+            "part3dot1" => $this->getPart3Dot1ById($idde),
+            "part3dot2" => $this->getPart3Dot2ById($idde),
+            "part4" => $this->getPart4ById($idde),
+            "part5" => $this->getPart5ById($idde),
+            "part6" => $this->getPart6ById($idde),
+            "part7" => $this->getPart7ById($idde),
+            "part8" => $this->getPart8ById($idde),
+            "part9" => $this->getPart9ById($idde),
+            "part10" => $this->getPart10ById($idde),
+            "part11" => $this->getPart11ById($idde),
+            "part12" => $this->getPart12ById($idde),
+            "part13" => $this->getPart13ById($idde),
+        ];
+        return $oneExam;
+    }
 }
