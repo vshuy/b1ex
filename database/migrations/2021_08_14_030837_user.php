@@ -1,10 +1,11 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class User extends Migration
 {
     /**
      * Run the migrations.
@@ -22,6 +23,11 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        DB::table('users')->insert([
+            'name' => 'admin',
+            'email' => 'vshbmt@gmail.com',
+            'password' => bcrypt('123456789'),
+        ]);
     }
 
     /**

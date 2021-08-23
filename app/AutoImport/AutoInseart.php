@@ -2,24 +2,19 @@
 
 namespace App\AutoImport;
 
-use App\Models\cauhoi;
-use App\Models\dethi;
+use App\Models\dapan;
 use App\Models\phan;
-use App\Models\phuongan;
-use App\Models\tailieu;
+use App\Models\dethi;
+use App\Models\tailieu_phan;
+use App\Models\cauhoi;
+use App\Models\tailieu_dapan;
 
 class AutoInseart
 {
-    public function inseartMotTaiLieu($url, $kieutl)
+    public function inseartMotTaiLieuPhuongAn($request, $name, $dapanid)
     {
-        $tailieu = new tailieu();
-        $tailieu->url = $url;
-        $tailieu->kieutl = $kieutl;
-        $tailieu->save();
-        return $tailieu->id;
-    }
-    public function moveFileByName($request, $name)
-    {
+        $path = "";
+        $idTypeDocument = "";
         if ($name == "") {
             return 1;
         }
@@ -28,9 +23,45 @@ class AutoInseart
             if ($filename == $name) {
                 $exfile = $afile->getClientOriginalExtension();
                 $path = $afile->store('datafordb');
-                return $this->inseartMotTaiLieu($path, $exfile);
             }
         }
+        if ($exfile == "mp3") {
+            $idTypeDocument = 1;
+        } else {
+            $idTypeDocument = 2;
+        }
+        $tailieu = new tailieu_dapan();
+        $tailieu->url = $path;
+        $tailieu->kieutailieu_id = $idTypeDocument;
+        $tailieu->dapan_id = $dapanid;
+        $tailieu->save();
+        return $tailieu->id;
+    }
+    public function inseartMotTaiLieuPhan($request, $name, $phanid)
+    {
+        $path = "";
+        $idTypeDocument = "";
+        if ($name == "") {
+            return 1;
+        }
+        foreach ($request->listfileimg as $afile) {
+            $filename = $afile->getClientOriginalName();
+            if ($filename == $name) {
+                $exfile = $afile->getClientOriginalExtension();
+                $path = $afile->store('datafordb');
+            }
+        }
+        if ($exfile == "mp3") {
+            $idTypeDocument = 1;
+        } else {
+            $idTypeDocument = 2;
+        }
+        $tailieu = new tailieu_phan();
+        $tailieu->url = $path;
+        $tailieu->kieutailieu_id = $idTypeDocument;
+        $tailieu->phan_id = $phanid;
+        $tailieu->save();
+        return $tailieu->id;
     }
     public function inseartMotDet($tende)
     {
@@ -39,31 +70,29 @@ class AutoInseart
         $dethi->save();
         return $dethi->id;
     }
-    public function inseartMotPhan($dethi_id, $tenphan, $tailieupng_id, $tailieump3_id)
+    public function inseartMotPhan($name)
     {
         $phan = new phan();
-        $phan->dethi_id = $dethi_id;
-        $phan->ten_phan = $tenphan;
-        $phan->tailieujpg_id = $tailieupng_id;
-        $phan->tailieump3_id = $tailieump3_id;
+        $phan->name = $name;
         $phan->save();
         return $phan->id;
     }
-    public function inseartMotCauHoi($phan_id, $noi_dung_cau_hoi)
+    public function inseartMotCauHoi($phan_id, $chua_phuongan_nhieu, $noi_dung_cau_hoi)
     {
         $cauhoi = new cauhoi();
         $cauhoi->phan_id = $phan_id;
         $cauhoi->noidung_cauhoi = $noi_dung_cau_hoi;
+        $cauhoi->chua_pa_nhieu = $chua_phuongan_nhieu;
         $cauhoi->save();
         return $cauhoi->id;
     }
-    public function inseartMotPhuongAn($cauhoi_id, $tailieu_id, $noidung_pa, $dapan)
+    public function inseartMotPhuongAn($cauhoi_id, $noidung_pa, $dapan)
     {
-        $phuongan = new phuongan();
+        $phuongan = new dapan();
         $phuongan->cauhoi_id = $cauhoi_id;
-        $phuongan->tailieu_id = $tailieu_id;
-        $phuongan->noidung_pa = $noidung_pa;
+        $phuongan->noidung_dapan = $noidung_pa;
         $phuongan->dapan = $dapan;
         $phuongan->save();
+        return $phuongan->id;
     }
 }

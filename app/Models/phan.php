@@ -9,8 +9,5 @@ class phan extends Model
 {
     protected $table = "phans";
     public $timestamps = false;
-    public function cauhoi()
-    {
-        return $this->hasMany(cauhoi::class, 'phan_id', 'id');
-    }
+
 }

@@ -26,6 +26,7 @@ Route::get('/uploadfilepage', function () {
 Route::post('/uploadfile', [UploadController::class, 'uploadFile'])->name('uploadfile')->middleware('auth');
 Route::get('/', [PartController::class, 'showListExam'])->name('dashboard')->middleware('auth');
 Route::get('/detailanexamby/{id}', [PartController::class, 'detailAnExam']);
+Route::get('/createoneexam', [DethiController::class, 'createOneExam'])->name('createOneExam')->middleware('auth');
 Route::get('/deleteanexamby/{id}', [PartController::class, 'deleteAnExamById']);
 
 

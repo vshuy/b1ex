@@ -54,7 +54,7 @@
                     <div class="row">
                         <h6>Part1</h6>
                         <div class="colsm-12"> <img
-                                src="{{ url('/') . '/' . $oneExam[0]['listPartDocumentArray'][1]->url }}" alt="error">
+                                src="{{ url('/') . '/' . $oneExam[0]['listPartDocumentArray'][0]->url }}" alt="error">
                         </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[0]['questions'] as $aItem)
@@ -70,7 +70,7 @@
                         {{-- -----------------------------------------------part 2 ok no test this part------------------------------------------------------------- --}}
                         <h6>Part2</h6>
                         <div class="colsm-12"> <img
-                                src="{{ url('/') . '/' . $oneExam[1]['listPartDocumentArray'][1]->url }}"
+                                src="{{ url('/') . '/' . $oneExam[1]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[1]['questions'] as $aItem)
@@ -79,13 +79,13 @@
                         </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[1]['answers'] as $aItem)
-                                <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_dapan }} </div>
                             @endforeach
                         </div>
                         {{-- -------------------------------------------------part 3.1 ok no test this part------------------------------------------------------------ --}}
                         <h6>Part3.1</h6>
                         <div class="colsm-12"> <img
-                                src="{{ url('/') . '/' . $oneExam[2]['listPartDocumentArray'][1]->url }}"
+                                src="{{ url('/') . '/' . $oneExam[2]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[2]['questions'] as $aItem)
@@ -94,24 +94,24 @@
                         </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[2]['answers'] as $aItem)
-                                <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_dapan }} </div>
                             @endforeach
                         </div>
                         {{-- ---------------------------------------------------Part 3.2 ok no test this part----------------------------------- --}}
                         <h6>Part3.2</h6>
                         <div class="col-sm-5">
-                            <img src="{{ url('/') . '/' . $oneExam[3]['listPartDocumentArray'][1]->url }}"
+                            <img src="{{ url('/') . '/' . $oneExam[3]['listPartDocumentArray'][0]->url }}"
                                 alt="error">
                         </div>
                         <div class="col-sm-7">
                             @foreach ($oneExam[3]['answers'] as $aItem)
-                                <div class="mt-5"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-5"> {{ $loop->iteration }} {{ $aItem->noidung_dapan }} </div>
                             @endforeach
                         </div>
                         {{-- -----------------------------------------------------Part 4 ok no test this part--------------------------------- --}}
                         <h6>Part4</h6>
                         <div class="colsm-12"> <img
-                                src="{{ url('/') . '/' . $oneExam[4]['listPartDocumentArray'][1]->url }}"
+                                src="{{ url('/') . '/' . $oneExam[4]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[4]['questions'] as $aItem)
@@ -120,24 +120,24 @@
                         </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[4]['answers'] as $aItem)
-                                <div class="mt-0"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-0"> {{ $loop->iteration }} {{ $aItem->noidung_dapan }} </div>
                             @endforeach
                         </div>
                         {{-- ------------------------------------------Part 5 ok no test this part----------------------------------------------- --}}
                         <h6>Part5</h6>
                         <div class="col-sm-6"> <img
-                                src="{{ url('/') . '/' . $oneExam[5]['listPartDocumentArray'][1]->url }}"
+                                src="{{ url('/') . '/' . $oneExam[5]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[5]['answers'] as $aItem)
-                                <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_dapan }} </div>
                             @endforeach
                         </div>
 
                         {{-- ------------------------------------------Part 6 ok no test this part--------------------------------------- --}}
                         <h6>Part6</h6>
                         <div class="colsm-12"> <img
-                                src="{{ url('/') . '/' . $oneExam[6]['listPartDocumentArray'][1]->url }}"
+                                src="{{ url('/') . '/' . $oneExam[6]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[6]['questions'] as $aItem)
@@ -146,28 +146,28 @@
                         </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[6]['answers'] as $aItem)
-                                <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_dapan }} </div>
                             @endforeach
                         </div>
                         {{-- ----------------------------------------------Part 7 ok no test this part------------------------------------------ --}}
                         <h6>Part7</h6>
                         <div class="col-sm-6"> <img
-                                src="{{ url('/') . '/' . $oneExam[7]['listPartDocumentArray'][1]->url }}"
+                                src="{{ url('/') . '/' . $oneExam[7]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6 mt-5">
                             @foreach ($oneExam[7]['answers'] as $aItem)
-                                <div class="mt-2"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-2"> {{ $loop->iteration }} {{ $aItem->noidung_dapan }} </div>
                             @endforeach
                         </div>
 
                         {{-- ---------------------------------------------Part 8 ok no test this part--------------------------------------------------------------------- --}}
                         <h6>Part8</h6>
                         <div class="col-sm-5"> <img
-                                src="{{ url('/') . '/' . $oneExam[8]['listPartDocumentArray'][1]->url }}"
+                                src="{{ url('/') . '/' . $oneExam[8]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-7">
                             @foreach ($oneExam[8]['answers'] as $aItem)
-                                <div class="mt-5"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-5"> {{ $loop->iteration }} {{ $aItem->noidung_dapan }} </div>
                             @endforeach
                         </div>
                         {{-- --------------------------------------------Part 9 OK no test this part----------------------------------------------------------------------- --}}
@@ -212,7 +212,7 @@
                         </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[10]['answers'] as $aItem)
-                                <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_dapan }} </div>
                             @endforeach
                         </div>
                         {{-- -----------------------------------------------Part 11---Ok no test this part---------------------------------------- --}}
@@ -233,7 +233,7 @@
                         </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[11]['answers'] as $aItem)
-                                <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-1"> {{ $loop->iteration }} {{ $aItem->noidung_dapan }} </div>
                             @endforeach
                         </div>
                         {{-- --------------------------------------------------Part 12 ok no test this part----------------------------------- --}}
@@ -249,7 +249,7 @@
                         </div>
                         <div class="col-sm-6 mt-5">
                             @foreach ($oneExam[12]['answers'] as $aItem)
-                                <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_dapan }} </div>
                             @endforeach
                         </div>
                         {{-- ------------------------------------------------------------------------------------------------------------------ --}}
@@ -265,7 +265,7 @@
                         </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[13]['answers'] as $aItem)
-                                <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_pa }} </div>
+                                <div class="mt-4"> {{ $loop->iteration }} {{ $aItem->noidung_dapan }} </div>
                             @endforeach
                         </div>
 

@@ -43,6 +43,11 @@
                                 <span data-feather="home"></span> Tải lên một đề
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route('createOneExam') }}">
+                                <span data-feather="home"></span> Tạo một đề mới
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -62,7 +67,7 @@
                             @foreach ($listde as $ADe)
                                 <tr>
                                     <td>{{ $ADe->id }}</td>
-                                    <td>{{ $ADe->ten_de }}</td>
+                                    <td>{{ $ADe->name }}</td>
                                     <td><a href="/detailanexamby/{{ $ADe->id }}">Xem chi tiết đề này</a></td>
                                     <td><a href="/deleteanexamby/{{ $ADe->id }}">Xóa đề này</a></td>
                                 </tr>

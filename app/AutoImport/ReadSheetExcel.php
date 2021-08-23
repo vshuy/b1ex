@@ -35,35 +35,42 @@ class ReadSheetExcel
         // echo '</table>' . PHP_EOL;
         // //////////////////////////////////////////////
         $InseartOB = new AutoInseart();
-        $nowidde = $InseartOB->inseartMotDet($workSheet->getCellByColumnAndRow(3, 4)->getValue());
+        // $nowidde = $InseartOB->inseartMotDet($workSheet->getCellByColumnAndRow(3, 4)->getValue());
         $nowpart = "";
         $nowidpart = "";
         $nowquestion = "";
         $nowidquestion = "";
         $noidungpa = "";
+        $nowidphuongan = "";
         for ($row = 7; $row <= $highestRow; ++$row) {
             if ($nowpart != $workSheet->getCellByColumnAndRow(1, $row)->getValue()) {
                 $nowpart = $workSheet->getCellByColumnAndRow(1, $row)->getValue();
                 $namefilemp3 = $workSheet->getCellByColumnAndRow(2, $row)->getValue();
                 $namefilepng = $workSheet->getCellByColumnAndRow(3, $row)->getValue();
                 //echo "Name of two file is :".$namefilemp3." and ".$namefilepng."<br>";
-                $idfilemp3 = $InseartOB->moveFileByName($request, $namefilemp3);
-                $idfilepng = $InseartOB->moveFileByName($request, $namefilepng);
+                $nowidpart = $InseartOB->inseartMotPhan($nowpart);
+                if ($namefilemp3 != "") {
+                    $InseartOB->inseartMotTaiLieuPhan($request, $namefilemp3, $nowidpart);
+                }
+                $InseartOB->inseartMotTaiLieuPhan($request, $namefilepng, $nowidpart);
                 //echo "Id file mp3 is :".$idfilemp3." id file png is :".$idfilepng."<br><br>";
-                $nowidpart = $InseartOB->inseartMotPhan($nowidde, $nowpart, $idfilepng, $idfilemp3);
             }
             if ($nowquestion != $workSheet->getCellByColumnAndRow(4, $row)->getValue()) {
                 $nowquestion = $workSheet->getCellByColumnAndRow(4, $row)->getValue();
-                $nowidquestion = $InseartOB->inseartMotCauHoi($nowidpart, $nowquestion);
+                $isContainNoise = $workSheet->getCellByColumnAndRow(8, $row)->getValue();
+                if ($isContainNoise == "") {
+                    $isContainNoise = "0";
+                }
+                $nowidquestion = $InseartOB->inseartMotCauHoi($nowidpart, $isContainNoise, $nowquestion);
             }
-            $nametailieupa = $workSheet->getCellByColumnAndRow(7, $row)->getValue();
-            $idfiletailieupa = $InseartOB->moveFileByName($request, $nametailieupa);
             $noidungpa = $workSheet->getCellByColumnAndRow(5, $row)->getValue();
+            $dapan = $workSheet->getCellByColumnAndRow(6, $row)->getValue();
             if ($noidungpa == "") {
                 $noidungpa = "listenpart";
             }
-            $dapan = $workSheet->getCellByColumnAndRow(6, $row)->getValue();
-            $InseartOB->inseartMotPhuongAn($nowidquestion, $idfiletailieupa, $noidungpa, $dapan);
+            $nowidphuongan = $InseartOB->inseartMotPhuongAn($nowidquestion, $noidungpa, $dapan);
+            $nametailieupa = $workSheet->getCellByColumnAndRow(7, $row)->getValue();
+            $InseartOB->inseartMotTaiLieuPhuongAn($request, $nametailieupa, $nowidphuongan);
         }
     }
 }

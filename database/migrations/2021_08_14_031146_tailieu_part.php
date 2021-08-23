@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCauhoisTable extends Migration
+class TailieuPart extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateCauhoisTable extends Migration
      */
     public function up()
     {
-        Schema::create('cauhois', function (Blueprint $table) {
+        Schema::create('tailieu_phans', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('kieutailieu_id')->unsigned();
             $table->integer('phan_id')->unsigned();
-            $table->text('noidung_cauhoi');
+            $table->text('url');
         });
+        // $InseartOB = new AutoInseart();
+        // $InseartOB->inseartMotTaiLieu("", "");
     }
 
     /**
@@ -27,6 +30,6 @@ class CreateCauhoisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cauhois');
+        Schema::dropIfExists('tailieu_phans');
     }
 }

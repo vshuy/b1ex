@@ -3,9 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\AutoImport\AutoInseart;
 
-class CreateTailieusTable extends Migration
+class Cauhoi extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +13,12 @@ class CreateTailieusTable extends Migration
      */
     public function up()
     {
-        Schema::create('tailieus', function (Blueprint $table) {
+        Schema::create('cauhois', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('url');
-            $table->text('kieutl');
+            $table->integer('phan_id')->unsigned();
+            $table->boolean('chua_pa_nhieu');
+            $table->text('noidung_cauhoi');
         });
-        $InseartOB = new AutoInseart();
-        $InseartOB->inseartMotTaiLieu("", "");
     }
 
     /**
@@ -30,6 +28,6 @@ class CreateTailieusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tailieus');
+        Schema::dropIfExists('cauhois');
     }
 }
