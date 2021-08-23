@@ -83,7 +83,7 @@ class PartController extends Controller
             $idAnswerArray[] = $aAnswer->id;
         }
         $listDocumentOfPart = DB::table('tailieu_dapans')
-            ->select('tailieu_dapans.url')
+            ->select('tailieu_dapans.dapan_id', 'tailieu_dapans.url')
             ->whereIn('dapan_id', $idAnswerArray)
             ->get();
         $result = collect([
