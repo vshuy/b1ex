@@ -48,6 +48,11 @@
                                 <span data-feather="home"></span> Tạo một đề mới
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route('dashboardpost') }}">
+                                <span data-feather="home"></span> Quản lý tài liệu
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>

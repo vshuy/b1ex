@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /public/datafordb
+/public/datafordoc
 /storage/*.key
 /vendor
 .env
