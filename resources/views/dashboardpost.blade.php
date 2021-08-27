@@ -14,7 +14,8 @@
 <body>
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="{{ route('dashboard') }}" style="color:green">B1 EX</a>
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="{{ route('dashboard') }}" style="color:green">B1
+            EX</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -44,8 +45,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('uploadcategorypage') }}">
-                                <span data-feather="home"></span> Tạo loại tài liệu mới
+                            <a class="nav-link active" aria-current="page" href="{{ route('dashboardcategory') }}">
+                                <span data-feather="home"></span> Quản lý loại tài liệu
                             </a>
                         </li>
                     </ul>
@@ -69,7 +70,8 @@
                                 <tr>
                                     <td>{{ $APost->id }}</td>
                                     <td>{{ $APost->name_post }}</td>
-                                    <td><a href="/detailanpostby/{{ $APost->id }}">Xem chi tiết tài liệu này</a></td>
+                                    <td><a href="/detailanpostby/{{ $APost->id }}">Xem chi tiết tài liệu này</a>
+                                    </td>
                                     <td><a href="/updateanpostby/{{ $APost->id }}">Chỉnh sửa tài liệu này</a></td>
                                     <td><a href="/deleteanpostby/{{ $APost->id }}">Xóa tài liệu này</a></td>
                                 </tr>
