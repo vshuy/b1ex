@@ -26,7 +26,13 @@
             <li class="nav-item text-nowrap">
                 @if (Auth::check())
                     <span style="color: red;">{{ Auth::user()->name }}</span>
-                    <a href="{{ route('logout') }}" style="margin-left: 25px;"> Logout</a>
+                    <form id="logout-form" style="color: blue;display: inline;margin-left: 2px;" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                    </form>
                 @else
                     <a href="{{ route('login') }}"> Login</a>
                 @endif
@@ -54,7 +60,7 @@
                                 <span data-feather="home"></span> Quản lý tài liệu
                             </a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </nav>

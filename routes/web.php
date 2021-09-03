@@ -32,9 +32,9 @@ Route::get('/createoneexam', [DethiController::class, 'createOneExam'])->name('c
 Route::get('/deleteanexamby/{id}', [PartController::class, 'deleteAnExamById']);
 
 //////////////--------------Identify region-------------/////////////////////
-Route::get('/login', [UserController::class, 'showViewLogin'])->name('loginpage');
-Route::post('/loginrequest', [UserController::class, 'handleLogin'])->name('login');
-Route::get('/logoutrequest', [UserController::class, 'handleLogout'])->name('logout');
+// Route::get('/login', [UserController::class, 'showViewLogin'])->name('loginpage');
+// Route::post('/loginrequest', [UserController::class, 'handleLogin'])->name('login');
+// Route::get('/logoutrequest', [UserController::class, 'handleLogout'])->name('logout');
 Route::get('/loginfacebook', function () {
     return view('loginfacebook');
 });
@@ -68,3 +68,7 @@ Route::get('/uploadcategorypage', [CategoryController::class, 'create'])->name('
 Route::get('/categorymanage', [CategoryController::class, 'index'])->name('dashboardcategory');
 Route::post('/uploadcategory', [CategoryController::class, 'store'])->name('uploadcategory');
 Route::get('/deleteancategoryby/{id}', [CategoryController::class, 'destroy']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
