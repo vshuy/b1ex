@@ -20,11 +20,11 @@
                     @csrf
                     {{ csrf_field() }}
                     <textarea name="editor1" id="editor1" rows="10" cols="80">
-                        {!! $aPost->contents_post !!}
+                        {!! $aPost->noidung_lythuyet !!}
                 </textarea>
                     <input type="hidden" id="idpost" name="idpost" value="{{ $aPost->id }}">
                     <span>Nhập tên tài liệu</span>
-                    <input type="text" name="postname" value="{{ $aPost->name_post }}" style="width:600px;">
+                    <input type="text" name="postname" value="{{ $aPost->ten_lythuyet }}" style="width:600px;">
                     <p><input type="submit" value="Update document"></p>
                 </form>
             </div>
