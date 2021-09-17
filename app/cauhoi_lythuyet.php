@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class loai_tailieu_ta extends Model
+class cauhoi_lythuyet extends Model
 {
-    protected $table = "loai_tailieu_tas";
+    protected $table = "cauhoi_lythuyets";
     public $timestamps = false;
 }

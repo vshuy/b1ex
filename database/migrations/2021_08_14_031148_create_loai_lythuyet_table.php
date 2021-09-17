@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLoaiTailieuTasTable extends Migration
+class CreateLoaiLythuyetTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateLoaiTailieuTasTable extends Migration
      */
     public function up()
     {
-        Schema::create('loai_tailieu_tas', function (Blueprint $table) {
-            $table->id();
-            $table->text('name_category_post');
-            $table->text('descripe');
+        Schema::create('loai_lythuyets', function (Blueprint $table) {
+            $table->increments('id');
+            $table->text('ten_loai');
+            $table->text('mota');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateLoaiTailieuTasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loai_tailieu_tas');
+        Schema::dropIfExists('loai_lythuyets');
     }
 }

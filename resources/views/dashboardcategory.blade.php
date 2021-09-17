@@ -66,6 +66,7 @@
                                 <th>Id</th>
                                 <th>Name</th>
                                 <th>Mô tả chi tiết</th>
+                                <th>Xem tai lieu theo danh muc nay</th>
                                 <th>Xóa danh mục</th>
                             </tr>
                         </thead>
@@ -73,8 +74,9 @@
                             @foreach ($listCategories as $ACategory)
                                 <tr>
                                     <td>{{ $ACategory->id }}</td>
-                                    <td>{{ $ACategory->name_category_post }}</td>
-                                    <td>{{ $ACategory->descripe }}</td>
+                                    <td>{{ $ACategory->ten_loai }}</td>
+                                    <td>{{ $ACategory->mota }}</td>
+                                    <td><a href="/postmanagebyidcategory/{{ $ACategory->id }}">Lọc list tài liệu theo danh mục này</a></td>
                                     <td><a href="/deleteancategoryby/{{ $ACategory->id }}">Xóa danh mục này</a></td>
                                 </tr>
                             @endforeach

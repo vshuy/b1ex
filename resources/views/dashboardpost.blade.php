@@ -66,7 +66,9 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
+                                <th>Danh mục</th>
                                 <th>Name</th>
+                                <th>Xem các tài liệu có cùng thể loại</th>
                                 <th>Xem chi tiết</th>
                                 <th>Chỉnh sửa tài liệu</th>
                                 <th>Xóa document</th>
@@ -76,7 +78,9 @@
                             @foreach ($listpost as $APost)
                                 <tr>
                                     <td>{{ $APost->id }}</td>
-                                    <td>{{ $APost->name_post }}</td>
+                                    <td>{{ $APost->ten_loai }}</td>
+                                    <td>{{ $APost->ten_lythuyet }}</td>
+                                    <td><a href="/postmanagebyidcategory/{{ $APost->loai_lythuyet_id }}">Xem các tài liệu có cùng dạng này</a></td>
                                     <td><a href="/detailanpostby/{{ $APost->id }}">Xem chi tiết tài liệu này</a>
                                     </td>
                                     <td><a href="/updateanpostby/{{ $APost->id }}">Chỉnh sửa tài liệu này</a></td>

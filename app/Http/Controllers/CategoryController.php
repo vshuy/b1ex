@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\loai_lythuyet;
 use App\loai_tailieu_ta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $listCategories = DB::table('loai_tailieu_tas')
+        $listCategories = DB::table('loai_lythuyets')
             ->get();
         return view('dashboardcategory', ['listCategories' => $listCategories]);
     }
@@ -38,9 +39,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category= new loai_tailieu_ta();
-        $category->name_category_post=$request->categoryname;
-        $category->descripe =$request->categorydescripe;
+        $category= new loai_lythuyet();
+        $category->ten_loai=$request->categoryname;
+        $category->mota =$request->categorydescripe;
         $category->save();
         return redirect()->route('dashboardcategory');
     }
@@ -48,10 +49,10 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\loai_tailieu_ta  $loai_tailieu_ta
+     * @param  \App\loai_lythuyet  $loai_tailieu_ta
      * @return \Illuminate\Http\Response
      */
-    public function show(loai_tailieu_ta $loai_tailieu_ta)
+    public function show(loai_lythuyet $loai_tailieu_ta)
     {
         //
     }
@@ -59,10 +60,10 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\loai_tailieu_ta  $loai_tailieu_ta
+     * @param  \App\loai_lythuyet  $loai_tailieu_ta
      * @return \Illuminate\Http\Response
      */
-    public function edit(loai_tailieu_ta $loai_tailieu_ta)
+    public function edit(loai_lythuyet $loai_tailieu_ta)
     {
         //
     }
@@ -71,10 +72,10 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\loai_tailieu_ta  $loai_tailieu_ta
+     * @param  \App\loai_lythuyet  $loai_tailieu_ta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, loai_tailieu_ta $loai_tailieu_ta)
+    public function update(Request $request, loai_lythuyet $loai_tailieu_ta)
     {
         //
     }
@@ -82,12 +83,12 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\loai_tailieu_ta  $loai_tailieu_ta
+     * @param  \App\loai_lythuyet  $loai_tailieu_ta
      * @return \Illuminate\Http\Response
      */
     public function destroy($idcategory)
     {
-        DB::table('loai_tailieu_tas')->where('id', '=', $idcategory)->delete();
+        DB::table('loai_lythuyets')->where('id', '=', $idcategory)->delete();
         return redirect()->route('dashboardcategory');
     }
 }

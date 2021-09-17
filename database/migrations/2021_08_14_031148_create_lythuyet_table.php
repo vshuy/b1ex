@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTailieuTasTable extends Migration
+class CreateLythuyetTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class CreateTailieuTasTable extends Migration
      */
     public function up()
     {
-        Schema::create('tailieu_tas', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('category_id');
-            $table->text('name_post');
+        Schema::create('ly_thuyets', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('loai_lythuyet_id')->unsigned();
+            $table->text('ten_lythuyet');
             $table->timestamps();
             $table->bigInteger('views');
-            $table->longText('contents_post');
+            $table->longText('noidung_lythuyet');
         });
-        Schema::table('tailieu_tas', function ($table) {
-            $table->foreign('category_id')
+        Schema::table('ly_thuyets', function ($table) {
+            $table->foreign('loai_lythuyet_id')
                 ->references('id')
-                ->on('loai_tailieu_tas')
+                ->on('loai_lythuyets')
                 ->onDelete('cascade');
         });
     }
@@ -36,6 +36,6 @@ class CreateTailieuTasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tailieu_tas');
+        Schema::dropIfExists('ly_thuyets');
     }
 }

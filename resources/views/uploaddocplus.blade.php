@@ -26,9 +26,12 @@
                     <span>Chọn loại tài liệu</span>
                     <select name="category" id="category">
                         @foreach ($listCategories as $aItem)
-                            <option value="{{ $aItem->id }}"> {{ $aItem->name_category_post }}</option>
+                            <option value="{{ $aItem->id }}"> {{ $aItem->ten_loai }}</option>
                         @endforeach
                     </select>
+                    <br>
+                    <span>Select a question file excel</span>
+                    <input type="file" name="fileExcel" value="Select a excel file"><br>
                     <p><input type="submit" value="Upload document"></p>
                 </form>
             </div>

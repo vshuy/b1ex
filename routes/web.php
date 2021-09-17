@@ -35,6 +35,7 @@ Route::get('/deleteanexamby/{id}', [PartController::class, 'deleteAnExamById']);
 // Route::get('/login', [UserController::class, 'showViewLogin'])->name('loginpage');
 // Route::post('/loginrequest', [UserController::class, 'handleLogin'])->name('login');
 // Route::get('/logoutrequest', [UserController::class, 'handleLogout'])->name('logout');
+
 Route::get('/loginfacebook', function () {
     return view('loginfacebook');
 });
@@ -57,6 +58,7 @@ Route::get('/deletedata', function () {
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
 Route::get('/uploaddocumentpage', [PostController::class, 'create'])->name('uploadpostpage');
 Route::get('/postmanage', [PostController::class, 'index'])->name('dashboardpost');
+Route::get('/postmanagebyidcategory/{id}', [PostController::class, 'listDocByIdCategory'])->name('dashboardpostbyidcategory');
 Route::get('/deleteanpostby/{id}', [PostController::class, 'destroy']);
 Route::get('/detailanpostby/{id}', [PostController::class, 'show']);
 Route::get('/updateanpostby/{id}', [PostController::class, 'edit']);
