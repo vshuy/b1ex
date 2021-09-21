@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiLythuyetController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PartController;
@@ -46,3 +47,6 @@ Route::post('/updatescore', [FbAuthController::class, 'updateScore']);
 Route::post('/deleteaccountbyuserid', [FbAuthController::class, 'deleteUserbyId']);
 
 Route::get('/createoneexam', [DethiController::class, 'createOneExam']);
+
+Route::get('/getlistlythuyet', [ApiLythuyetController::class, 'index']);
+Route::get('/getdetaillythuyetby/{id}', [ApiLythuyetController::class, 'show']);
