@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExamController;
 use App\Http\Controllers\PartController;
+// use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\DethiController;
 use App\Http\Controllers\FbAuthController;
 use App\Http\Controllers\UploadController;
@@ -21,39 +22,20 @@ use App\Http\Controllers\CKEditorController;
 |
  */
 
-// --------------------Exam region-------------
-Route::get('/uploadfilepage', function () {
-    return view('uploadfile');
-})->name('uploadfilepage')->middleware('auth');
-Route::post('/uploadfile', [UploadController::class, 'uploadFile'])->name('uploadfile')->middleware('auth');
-Route::get('/', [PartController::class, 'showListExam'])->name('dashboard')->middleware('auth');
-Route::get('/detailanexamby/{id}', [PartController::class, 'detailAnExam']);
-Route::get('/createoneexam', [DethiController::class, 'createOneExam'])->name('createOneExam')->middleware('auth');
-Route::get('/deleteanexamby/{id}', [PartController::class, 'deleteAnExamById']);
+Route::get('/uploadfilepage', [UploadController::class, 'create'])->name('uploadfilepage')->middleware('auth');
+Route::post('/uploadfile', [UploadController::class, 'store'])->name('uploadfile')->middleware('auth');
 
-//////////////--------------Identify region-------------/////////////////////
-// Route::get('/login', [UserController::class, 'showViewLogin'])->name('loginpage');
-// Route::post('/loginrequest', [UserController::class, 'handleLogin'])->name('login');
-// Route::get('/logoutrequest', [UserController::class, 'handleLogout'])->name('logout');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/loginfacebook', function () {
-    return view('loginfacebook');
-});
-Route::get('/resultloginfacebook', function () {
-    return view('loginfbsuccess');
-});
-Route::get('/redirectloginfacebook', function () {
-    return view('redirect');
-});
-Route::get('/policy', function () {
-    return view('policy');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/deletedata', function () {
-    return view('deletedata');
-});
+Route::get('/dashboardexam', [ExamController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('/detailanexamby/{id}', [ExamController::class, 'show']);
+Route::get('/createoneexam', [ExamController::class, 'store'])->name('createOneExam')->middleware('auth');
+Route::get('/deleteanexamby/{id}', [ExamController::class, 'destroy']);
+
+
+
 //////////////////----------Document region------Rest Full API template---//////////////////
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
 Route::get('/uploaddocumentpage', [PostController::class, 'create'])->name('uploadpostpage');
@@ -74,3 +56,28 @@ Route::get('/deleteancategoryby/{id}', [CategoryController::class, 'destroy']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('roles', RoleController::class);
+    Route::resource('users', UserController::class);
+});
+
+
+Route::get('/loginfacebook', function () {
+    return view('loginfacebook');
+});
+Route::get('/resultloginfacebook', function () {
+    return view('loginfbsuccess');
+});
+Route::get('/redirectloginfacebook', function () {
+    return view('redirect');
+});
+Route::get('/policy', function () {
+    return view('policy');
+});
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/deletedata', function () {
+    return view('deletedata');
+});

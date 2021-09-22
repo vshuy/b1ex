@@ -26,7 +26,8 @@
             <li class="nav-item text-nowrap">
                 @if (Auth::check())
                     <span style="color: red;">{{ Auth::user()->name }}</span>
-                    <form id="logout-form" style="color: blue;display: inline;margin-left: 2px;" action="{{ route('logout') }}" method="POST">
+                    <form id="logout-form" style="color: blue;display: inline;margin-left: 2px;"
+                        action="{{ route('logout') }}" method="POST">
                         @csrf
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -58,6 +59,16 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{ route('dashboardpost') }}">
                                 <span data-feather="home"></span> Quản lý tài liệu
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route('users.index') }}">
+                                <span data-feather="home"></span> Quản lý user
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route('roles.index') }}">
+                                <span data-feather="home"></span> Quản lý roler
                             </a>
                         </li>
 
