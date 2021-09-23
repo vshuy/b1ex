@@ -34,8 +34,6 @@ Route::get('/detailanexamby/{id}', [ExamController::class, 'show']);
 Route::get('/createoneexam', [ExamController::class, 'store'])->name('createOneExam')->middleware('auth');
 Route::get('/deleteanexamby/{id}', [ExamController::class, 'destroy']);
 
-
-
 //////////////////----------Document region------Rest Full API template---//////////////////
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
 Route::get('/uploaddocumentpage', [PostController::class, 'create'])->name('uploadpostpage');

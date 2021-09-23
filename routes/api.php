@@ -50,3 +50,8 @@ Route::get('/createoneexam', [DethiController::class, 'createOneExam']);
 
 Route::get('/getlistlythuyet', [ApiLythuyetController::class, 'index']);
 Route::get('/getdetaillythuyetby/{id}', [ApiLythuyetController::class, 'show']);
+
+
+Route::post('/login', 'ApiLoginController@login');
+Route::post('/me', 'ApiLoginController@me');
+Route::post('/logout', 'ApiLoginController@logout');
