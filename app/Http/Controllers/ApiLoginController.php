@@ -72,6 +72,7 @@ class ApiLoginController extends Controller
     protected function respondWithToken($token)
     {
         return response()->json([
+            'user_infor' => auth('api')->user(),
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth('api')->factory()->getTTL() * 60
