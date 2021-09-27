@@ -1,6 +1,9 @@
 This system to experiment teamwork and help student improve their english skills.
 Our serve https://nikaws.cf  
 Our common API:  
+
+https://nikaws.cf/detailanexamby/1  
+
 https://nikaws.cf/api/getlistde  
 
 https://nikaws.cf/api/getpart1/1  
