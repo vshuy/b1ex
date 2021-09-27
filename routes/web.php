@@ -31,7 +31,7 @@ Route::get('/', function () {
 
 Route::get('/dashboardexam', [ExamController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::get('/detailanexamby/{id}', [ExamController::class, 'show']);
-Route::get('/createoneexam', [ExamController::class, 'store'])->name('createOneExam')->middleware('auth');
+Route::post('/createoneexam', [ExamController::class, 'store'])->name('createOneExam')->middleware('auth');
 Route::get('/deleteanexamby/{id}', [ExamController::class, 'destroy']);
 
 //////////////////----------Document region------Rest Full API template---//////////////////

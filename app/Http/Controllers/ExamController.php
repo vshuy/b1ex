@@ -42,10 +42,10 @@ class ExamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
         $dethi = new dethi();
-        $dethi->name = "mot de thi";
+        $dethi->name = $request->exam_name;
         $dethi->save();
         $exam_id = $dethi->id;
         $this->exSavePartByExamIdAndPartName($exam_id, '1');

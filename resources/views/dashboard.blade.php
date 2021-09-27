@@ -9,6 +9,14 @@
     <script src="{{ asset('src/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('src/dashboard.js') }}"></script>
     <link href="{{ asset('src/dashboard.css') }}" rel="stylesheet">
+    <style>
+        #myForm {
+            display: none;
+            position: absolute;
+            top: 100px;
+            left: 500px;
+        }
+    </style>
 </head>
 
 <body>
@@ -52,7 +60,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('createOneExam') }}">
+                            <a class="nav-link active" aria-current="page" href="#" onclick="openForm()">
                                 <span data-feather="home"></span> Tạo một đề mới
                             </a>
                         </li>
@@ -76,6 +84,22 @@
                 </div>
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="text-center" style="position: relative;">
+                    <div class="form-popup bg-light" id="myForm" style="padding: 10px;">
+                        <form method="POST" action="{{ route('createOneExam') }}" enctype="multipart/form-data">
+                            @csrf
+                            <div>
+                                <label for="email"><b>Enter name of exam</b></label></br>
+                                <input class="form form-control" type="text" placeholder="Enter exam name here" name="exam_name"
+                                    required /></br>
+                                <button type="submit" class="btn btn-info">Create new exam</button>
+                                <button type="button" class="btn btn-danger" onclick="closeForm()">
+                                    Hủy
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <h2>Quản lý đề</h2>
                     <table class="table table-striped table-sm">
@@ -102,6 +126,15 @@
             </main>
         </div>
     </div>
+    <script>
+        function openForm() {
+            document.getElementById('myForm').style.display = 'block';
+        }
+
+        function closeForm() {
+            document.getElementById('myForm').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
