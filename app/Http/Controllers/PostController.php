@@ -15,6 +15,18 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('permission:exam-list|role-create|role-edit|role-delete', ['only' => ['index', 'store']]);
+        $this->middleware('permission:exam-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:exam-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:exam-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $listPost = DB::table('ly_thuyets')

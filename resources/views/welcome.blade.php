@@ -87,7 +87,7 @@
             @role('Admin')
             <a href="{{ route('dashboard') }}">Click to mange resource page</a>
         @else
-            Have a good day man
+            Have a good day
             @endrole
         </div>
     </div>

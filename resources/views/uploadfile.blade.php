@@ -15,10 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
 </head>
+
 <body style="background-color: rgb(255, 255, 255);">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e1e1e1;">
         <a class="navbar-brand" href="#">
-            <div style="font-family: 'Roboto', sans-serif;font-size: 40px;font-weight: 900;color:green;font-style: italic;">
+            <div
+                style="font-family: 'Roboto', sans-serif;font-size: 40px;font-weight: 900;color:green;font-style: italic;">
                 B1 EX</div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -45,21 +47,31 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form> --}}
 
-                @if(Auth::check())
-                <span style="color: red">Hello {{Auth::user()->name}}</span>
-                <a href="{{route('logout')}}" style="margin-left: 25px;"> Logout</a>
-                @else
-                <a href="{{route('loginpage')}}"> Login</a>
-                @endif
+            @if (Auth::check())
+                <span style="color: red;" class="mr-2">{{ Auth::user()->name }}</span>
+                <form id="logout-form" style="color: blue;display: inline;margin-left: 2px;"
+                    action="{{ route('logout') }}" method="POST" class="mt-3">
+                    @csrf
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                </form>
+            @else
+                <a href="{{ route('login') }}"> Login</a>
+            @endif
         </div>
     </nav>
-    <form action="{{route('uploadfile')}}" method="POST" enctype="multipart/form-data">
-        @csrf <!-- {{ csrf_field() }} -->
+    <form action="{{ route('uploadfile') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <!-- {{ csrf_field() }} -->
         <span>Select folder data </span>
-        <input id="myInput" type="file" name="listfileimg[]" value="Select a folder" webkitdirectory directory multiple ><br><br>
+        <input id="myInput" type="file" name="listfileimg[]" value="Select a folder" webkitdirectory directory
+            multiple><br><br>
         <span>Select a file excel</span>
-        <input type="file"  name="fileExcel" value="Select a excel file"><br><br>
+        <input type="file" name="fileExcel" value="Select a excel file"><br><br>
         <input type="submit">
     </form>
 </body>
+
 </html>

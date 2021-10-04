@@ -33,7 +33,7 @@
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
                 @if (Auth::check())
-                    <span style="color: red;">{{ Auth::user()->name }}</span>
+                    <span style="color: red;" class="mr-3">{{ Auth::user()->name }}</span>
                     <form id="logout-form" style="color: blue;display: inline;margin-left: 2px;"
                         action="{{ route('logout') }}" method="POST">
                         @csrf

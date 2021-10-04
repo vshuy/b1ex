@@ -14,6 +14,18 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('permission:exam-list|role-create|role-edit|role-delete', ['only' => ['index', 'store']]);
+        $this->middleware('permission:exam-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:exam-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:exam-delete', ['only' => ['destroy']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $listCategories = DB::table('loai_lythuyets')
@@ -39,9 +51,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category= new loai_lythuyet();
-        $category->ten_loai=$request->categoryname;
-        $category->mota =$request->categorydescripe;
+        $category = new loai_lythuyet();
+        $category->ten_loai = $request->categoryname;
+        $category->mota = $request->categorydescripe;
         $category->save();
         return redirect()->route('dashboardcategory');
     }
