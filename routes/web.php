@@ -22,44 +22,48 @@ use App\Http\Controllers\CKEditorController;
 |
  */
 
-Route::get('/uploadfilepage', [UploadController::class, 'create'])->name('uploadfilepage')->middleware('auth');
-Route::post('/uploadfile', [UploadController::class, 'store'])->name('uploadfile')->middleware('auth');
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboardexam', [ExamController::class, 'index'])->name('dashboard')->middleware('auth');
-Route::get('/detailanexamby/{id}', [ExamController::class, 'show']);
-Route::post('/createoneexam', [ExamController::class, 'store'])->name('createOneExam')->middleware('auth');
-Route::get('/deleteanexamby/{id}', [ExamController::class, 'destroy']);
+Route::middleware(['auth'])->group(function () {
+    /////////////////------------Upload resource region ------- Rest Full API template ---------------------------
+    Route::get('/uploadfilepage', [UploadController::class, 'create'])->name('uploadfilepage')->middleware('auth');
+    Route::post('/uploadfile', [UploadController::class, 'store'])->name('uploadfile')->middleware('auth');
 
-//////////////////----------Document region------Rest Full API template---//////////////////
-Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
-Route::get('/uploaddocumentpage', [PostController::class, 'create'])->name('uploadpostpage');
-Route::get('/postmanage', [PostController::class, 'index'])->name('dashboardpost');
-Route::get('/postmanagebyidcategory/{id}', [PostController::class, 'listDocByIdCategory'])->name('dashboardpostbyidcategory');
-Route::get('/deleteanpostby/{id}', [PostController::class, 'destroy']);
-Route::get('/detailanpostby/{id}', [PostController::class, 'show']);
-Route::get('/updateanpostby/{id}', [PostController::class, 'edit']);
-Route::post('/updatepostrequest', [PostController::class, 'update']);
-Route::post('/uploadpost', [PostController::class, 'store'])->name('uploadpost');
+    /////////////////------------Exam region ---------- Rest Full API template ---------------------------
+    Route::get('/dashboardexam', [ExamController::class, 'index'])->name('dashboard')->middleware('auth');
+    Route::get('/detailanexamby/{id}', [ExamController::class, 'show']);
+    Route::post('/createoneexam', [ExamController::class, 'store'])->name('createOneExam')->middleware('auth');
+    Route::get('/deleteanexamby/{id}', [ExamController::class, 'destroy']);
 
-// ----------------------------Category region ------ RestFull API template---------------
-Route::get('/uploadcategorypage', [CategoryController::class, 'create'])->name('uploadcategorypage');
-Route::get('/categorymanage', [CategoryController::class, 'index'])->name('dashboardcategory');
-Route::post('/uploadcategory', [CategoryController::class, 'store'])->name('uploadcategory');
-Route::get('/deleteancategoryby/{id}', [CategoryController::class, 'destroy']);
+    //////////////////----------Document region------Rest Full API template---//////////////////
+    Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
+    Route::get('/uploaddocumentpage', [PostController::class, 'create'])->name('uploadpostpage');
+    Route::get('/postmanage', [PostController::class, 'index'])->name('dashboardpost');
+    Route::get('/postmanagebyidcategory/{id}', [PostController::class, 'listDocByIdCategory'])->name('dashboardpostbyidcategory');
+    Route::get('/deleteanpostby/{id}', [PostController::class, 'destroy']);
+    Route::get('/detailanpostby/{id}', [PostController::class, 'show']);
+    Route::get('/updateanpostby/{id}', [PostController::class, 'edit']);
+    Route::post('/updatepostrequest', [PostController::class, 'update']);
+    Route::post('/uploadpost', [PostController::class, 'store'])->name('uploadpost');
 
-Auth::routes();
+    // ----------------------------Category region ------ RestFull API template---------------
+    Route::get('/uploadcategorypage', [CategoryController::class, 'create'])->name('uploadcategorypage');
+    Route::get('/categorymanage', [CategoryController::class, 'index'])->name('dashboardcategory');
+    Route::post('/uploadcategory', [CategoryController::class, 'store'])->name('uploadcategory');
+    Route::get('/deleteancategoryby/{id}', [CategoryController::class, 'destroy']);
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['middleware' => ['auth']], function () {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/loginfacebook', function () {
     return view('loginfacebook');
