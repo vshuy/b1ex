@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Cauhoi extends Migration
+class CreateDethiGocsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class Cauhoi extends Migration
      */
     public function up()
     {
-        Schema::create('cauhois', function (Blueprint $table) {
+        Schema::create('dethi_gocs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('phan_id')->unsigned();
-            $table->integer('dethi_goc_id')->unsigned();
-            $table->boolean('chua_pa_nhieu');
-            $table->text('noidung_cauhoi');
+            $table->text('name');
         });
     }
 
@@ -29,6 +26,6 @@ class Cauhoi extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cauhois');
+        Schema::dropIfExists('dethi_gocs');
     }
 }

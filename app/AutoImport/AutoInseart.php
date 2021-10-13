@@ -2,15 +2,23 @@
 
 namespace App\AutoImport;
 
-use App\Models\dapan;
+use App\dethi_goc;
 use App\Models\phan;
+use App\Models\dapan;
 use App\Models\dethi;
-use App\Models\tailieu_phan;
 use App\Models\cauhoi;
+use App\Models\tailieu_phan;
 use App\Models\tailieu_dapan;
 
 class AutoInseart
 {
+    public function inseartMotDetThiGoc($tende)
+    {
+        $dethi = new dethi_goc();
+        $dethi->name = $tende;
+        $dethi->save();
+        return $dethi->id;
+    }
     public function inseartMotTaiLieuPhuongAn($request, $name, $dapanid)
     {
         $path = "";
@@ -63,13 +71,13 @@ class AutoInseart
         $tailieu->save();
         return $tailieu->id;
     }
-    public function inseartMotDet($tende)
-    {
-        $dethi = new dethi();
-        $dethi->ten_de = $tende;
-        $dethi->save();
-        return $dethi->id;
-    }
+    // public function inseartMotDet($tende)
+    // {
+    //     $dethi = new dethi();
+    //     $dethi->ten_de = $tende;
+    //     $dethi->save();
+    //     return $dethi->id;
+    // }
     public function inseartMotPhan($name)
     {
         $phan = new phan();
@@ -77,10 +85,11 @@ class AutoInseart
         $phan->save();
         return $phan->id;
     }
-    public function inseartMotCauHoi($phan_id, $chua_phuongan_nhieu, $noi_dung_cau_hoi)
+    public function inseartMotCauHoi($dethi_goc_id, $phan_id, $chua_phuongan_nhieu, $noi_dung_cau_hoi)
     {
         $cauhoi = new cauhoi();
         $cauhoi->phan_id = $phan_id;
+        $cauhoi->dethi_goc_id = $dethi_goc_id;
         $cauhoi->noidung_cauhoi = $noi_dung_cau_hoi;
         $cauhoi->chua_pa_nhieu = $chua_phuongan_nhieu;
         $cauhoi->save();

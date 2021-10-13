@@ -10,6 +10,7 @@ use App\Http\Controllers\FbAuthController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CKEditorController;
+use App\Http\Controllers\DethiGocController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,13 +31,18 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     /////////////////------------Upload resource region ------- Rest Full API template ---------------------------
-    Route::get('/uploadfilepage', [UploadController::class, 'create'])->name('uploadfilepage')->middleware('auth');
-    Route::post('/uploadfile', [UploadController::class, 'store'])->name('uploadfile')->middleware('auth');
+    Route::get('/uploadfilepage', [UploadController::class, 'create'])->name('uploadfilepage');
+    Route::post('/uploadfile', [UploadController::class, 'store'])->name('uploadfile');
+
+    /////////////////------------Root Exam region ---------- Rest Full API template ---------------------------
+    Route::get('/dashboardrootexam', [DethiGocController::class, 'index'])->name('dashboardrootexam');
+    Route::get('/detailanrootexamby/{id}', [DethiGocController::class, 'show']);
+    Route::get('/deleteanrootexamby/{id}', [DethiGocController::class, 'destroy']);
 
     /////////////////------------Exam region ---------- Rest Full API template ---------------------------
-    Route::get('/dashboardexam', [ExamController::class, 'index'])->name('dashboard')->middleware('auth');
+    Route::get('/dashboardexam', [ExamController::class, 'index'])->name('dashboard');
     Route::get('/detailanexamby/{id}', [ExamController::class, 'show']);
-    Route::post('/createoneexam', [ExamController::class, 'store'])->name('createOneExam')->middleware('auth');
+    Route::post('/createoneexam', [ExamController::class, 'store'])->name('createOneExam');
     Route::get('/deleteanexamby/{id}', [ExamController::class, 'destroy']);
 
     //////////////////----------Document region------Rest Full API template---//////////////////

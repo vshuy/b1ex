@@ -18,7 +18,7 @@ class UploadController extends Controller
     {
         $HandleSheetOB = new ReadSheetExcel();
         $HandleSheetOB->handleSheet($request);
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboardrootexam');
     }
     public function create()
     {

@@ -25,6 +25,9 @@ class Constraint extends Migration
             $table->foreign('phan_id')
                 ->references('id')->on('phans')
                 ->onDelete('cascade');
+            $table->foreign('dethi_goc_id')
+                ->references('id')->on('dethi_gocs')
+                ->onDelete('cascade');
         });
         Schema::table('dapans', function ($table) {
             $table->foreign('cauhoi_id')

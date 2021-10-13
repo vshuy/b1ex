@@ -61,11 +61,6 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('dashboardrootexam') }}">
-                                <span data-feather="home"></span> Quản lý đề gốc
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#" onclick="openForm()">
                                 <span data-feather="home"></span> Tạo một đề mới
                             </a>
@@ -122,8 +117,8 @@
                                 <tr>
                                     <td>{{ $ADe->id }}</td>
                                     <td>{{ $ADe->name }}</td>
-                                    <td><a href="/detailanexamby/{{ $ADe->id }}">Xem chi tiết đề này</a></td>
-                                    <td><a href="/deleteanexamby/{{ $ADe->id }}">Xóa đề này</a></td>
+                                    <td><a href="/detailanrootexamby/{{ $ADe->id }}">Xem chi tiết đề này</a></td>
+                                    <td><a href="/deleteanrootexamby/{{ $ADe->id }}">Xóa đề này</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

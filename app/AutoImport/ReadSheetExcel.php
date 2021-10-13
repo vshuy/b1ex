@@ -35,7 +35,7 @@ class ReadSheetExcel
         // echo '</table>' . PHP_EOL;
         // //////////////////////////////////////////////
         $InseartOB = new AutoInseart();
-        // $nowidde = $InseartOB->inseartMotDet($workSheet->getCellByColumnAndRow(3, 4)->getValue());
+        $nowidde = $InseartOB->inseartMotDetThiGoc($workSheet->getCellByColumnAndRow(3, 4)->getValue());
         $nowpart = "";
         $nowidpart = "";
         $nowquestion = "";
@@ -61,7 +61,7 @@ class ReadSheetExcel
                 if ($isContainNoise == "") {
                     $isContainNoise = "0";
                 }
-                $nowidquestion = $InseartOB->inseartMotCauHoi($nowidpart, $isContainNoise, $nowquestion);
+                $nowidquestion = $InseartOB->inseartMotCauHoi($nowidde, $nowidpart, $isContainNoise, $nowquestion);
             }
             $noidungpa = $workSheet->getCellByColumnAndRow(5, $row)->getValue();
             $dapan = $workSheet->getCellByColumnAndRow(6, $row)->getValue();
