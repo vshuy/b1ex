@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <h2>Quản lý đề</h2>
+                    <h2>Quản lý đề gốc</h2>
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
