@@ -92,7 +92,7 @@ class ApiLoginController extends Controller
         $validator = Validator::make($input, $rules);
 
         if ($validator->fails()) {
-            return response()->json(['success' => false]);
+            return response()->json(['success' => false, 'error' => $validator->messages()]);
         }
         $name = $request->name;
         $email = $request->email;
