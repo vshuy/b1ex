@@ -55,3 +55,4 @@ Route::get('/getdetaillythuyetby/{id}', [ApiLythuyetController::class, 'show']);
 Route::post('/login', 'ApiLoginController@login');
 Route::post('/me', 'ApiLoginController@me');
 Route::post('/logout', 'ApiLoginController@logout');
+Route::post('/register', 'ApiLoginController@register');
