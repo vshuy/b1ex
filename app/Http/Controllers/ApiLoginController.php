@@ -13,7 +13,7 @@ class ApiLoginController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login','register']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register']]);
     }
 
     /**
@@ -92,7 +92,7 @@ class ApiLoginController extends Controller
         $validator = Validator::make($input, $rules);
 
         if ($validator->fails()) {
-            return response()->json(['success' => false, 'error' => $validator->messages()]);
+            return response()->json(['success' => false]);
         }
         $name = $request->name;
         $email = $request->email;
