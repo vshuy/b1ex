@@ -13,7 +13,7 @@ class ApiLoginController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'isverified']]);
     }
 
     /**
@@ -99,5 +99,10 @@ class ApiLoginController extends Controller
         $password = $request->password;
         $user = User::create(['name' => $name, 'email' => $email, 'password' => Hash::make($password)]);
         return response()->json(['success' => true]);
+    }
+    public function isverified(Request $request)
+    {
+        $user = auth('api')->user();
+        return response()->json($user->hasVerifiedEmail());
     }
 }

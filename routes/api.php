@@ -56,3 +56,4 @@ Route::post('/login', 'ApiLoginController@login');
 Route::post('/me', 'ApiLoginController@me');
 Route::post('/logout', 'ApiLoginController@logout');
 Route::post('/register', 'ApiLoginController@register');
+Route::post('/isverified', 'ApiLoginController@isverified');
