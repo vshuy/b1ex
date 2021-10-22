@@ -23,14 +23,21 @@ class ApiLoginController extends Controller
      */
     public function login(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|string|email|max:255',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['success' => false, 'error' => $validator->messages()]);
+        }
 
         //echo "hello";
         $credentials = request(['email', 'password']);
 
         if (!$token = Auth::guard('api')->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json(['success' => false, 'error' => 'password incorrect or user does not exist']);
         }
-        return $this->respondWithToken($token);
+        return response()->json(['success' => true, 'token' => $this->respondWithToken($token)]);
     }
 
     /**
