@@ -23,7 +23,7 @@
                     đại học.</p>
                 <p>-Nguồn tài liệu trong ứng dụng được số hóa từ chương trình học KEY A2 Do đại học cambridge phát hành.
                 </p>
-                <p>-Phần mềm đánh giá chi tiết hiệu quả luyện tập theo các kỹ năng chính như nghe, đọc, từ vựng.</p>
+                <p>-Phần mềm đánh giá chi tiết hiệu quả luyện tập theo các kỹ năng chính như nghe, đọc, từ vựng..</p>
             </div>
         </div>
     </div>
