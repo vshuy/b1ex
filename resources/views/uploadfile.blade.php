@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Uploadfile page</title>
+    <title>Trang tải lên một đề</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/1618376060.js" crossorigin="anonymous"></script>
@@ -20,8 +20,8 @@
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e1e1e1;">
         <a class="navbar-brand" href="#">
             <div
-                style="font-family: 'Roboto', sans-serif;font-size: 40px;font-weight: 900;color:green;font-style: italic;">
-                B1 EX</div>
+                style="font-family: 'Roboto', sans-serif;font-size: 40px;font-weight: 900;color:green;">
+                B1EX</div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,10 +65,10 @@
     <form action="{{ route('uploadfile') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <!-- {{ csrf_field() }} -->
-        <span>Select folder data </span>
+        <span>Chọn một thư mục chứa cả file excel và file media đề thi </span>
         <input id="myInput" type="file" name="listfileimg[]" value="Select a folder" webkitdirectory directory
             multiple><br><br>
-        <span>Select a file excel</span>
+        <span>Chọn một file excel chứa nội dung đề thi</span>
         <input type="file" name="fileExcel" value="Select a excel file"><br><br>
         <input type="submit">
     </form>

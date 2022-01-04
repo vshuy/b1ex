@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin page</title>
+    <title>Trang quản trị</title>
     <link href="{{ asset('src/css/bootstrap.min.css') }}" rel="stylesheet">
     <script src="{{ asset('src/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('src/dashboard.js') }}"></script>
@@ -15,6 +15,25 @@
             position: absolute;
             top: 100px;
             left: 500px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 5px 5px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
     </style>
@@ -56,24 +75,42 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('uploadfilepage') }}">
-                                <span data-feather="home"></span> Tải lên một đề
-                            </a>
+                            <div class="dropdown nav-link">
+                                <span class="text-primary">Quản lý đề thi</span>
+                                <div class="dropdown-content">
+                                    <a class="nav-link active" aria-current="page"
+                                        href="{{ route('uploadfilepage') }}">
+                                        <span data-feather="home"></span> Tải lên một đề
+                                    </a>
+                                    {{-- <a class="nav-link active" aria-current="page"
+                                        href="{{ route('dashboardrootexam') }}">
+                                        <span data-feather="home"></span> Quản lý đề gốc
+                                    </a> --}}
+                                    <a class="nav-link active" aria-current="page" href="#" onclick="openForm()">
+                                        <span data-feather="home"></span> Tạo một đề mới
+                                    </a>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('dashboardrootexam') }}">
-                                <span data-feather="home"></span> Quản lý đề gốc
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#" onclick="openForm()">
-                                <span data-feather="home"></span> Tạo một đề mới
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('dashboardpost') }}">
-                                <span data-feather="home"></span> Quản lý tài liệu
-                            </a>
+
+                            <div class="dropdown nav-link">
+                                <span class="text-primary">Quản lý tài liệu</span>
+                                <div class="dropdown-content">
+                                    <a class="nav-link active" aria-current="page"
+                                        href="{{ route('dashboardpost') }}">
+                                        <span data-feather="home"></span> Xem danh sách tài liệu
+                                    </a>
+                                    <a class="nav-link active" aria-current="page"
+                                        href="{{ route('uploadpostpage') }}">
+                                        <span data-feather="home"></span> Tạo tài liệu mới
+                                    </a>
+                                    <a class="nav-link active" aria-current="page"
+                                        href="{{ route('dashboardcategory') }}">
+                                        <span data-feather="home"></span> Quản lý loại tài liệu
+                                    </a>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{ route('users.index') }}">

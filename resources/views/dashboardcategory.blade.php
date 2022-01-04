@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Categories page overview</title>
+    <title>Trang tổng quan các danh mục</title>
     <link href="{{ asset('src/css/bootstrap.min.css') }}" rel="stylesheet">
     <script src="{{ asset('src/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('src/dashboard.js') }}"></script>

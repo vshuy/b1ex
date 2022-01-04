@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12" style="text-align: center;">
-                <h6>Trang chỉnh sửa tài liệu</h6>
+                <h6>Trang chỉnh sửa bài học</h6>
             </div>
             <div class="col-sm-12">
                 <form action="/updatepostrequest" method="post" enctype="multipart/form-data">
@@ -23,7 +23,7 @@
                         {!! $aPost->noidung_lythuyet !!}
                 </textarea>
                     <input type="hidden" id="idpost" name="idpost" value="{{ $aPost->id }}">
-                    <span>Nhập tên tài liệu</span>
+                    <span>Nhập tên bài học</span>
                     <input type="text" name="postname" value="{{ $aPost->ten_lythuyet }}" style="width:600px;">
                     <p><input type="submit" value="Update document"></p>
                 </form>
