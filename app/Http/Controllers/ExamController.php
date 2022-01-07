@@ -10,7 +10,7 @@ class ExamController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('permission:exam-list|exam-create|exam-edit|exam-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:exam-list|exam-create|exam-edit|exam-delete', ['only' => ['index']]);
         $this->middleware('permission:exam-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:exam-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:exam-delete', ['only' => ['destroy']]);
