@@ -41,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
 
     /////////////////------------Exam region ---------- Rest Full API template ---------------------------
     Route::get('/dashboardexam', [ExamController::class, 'index'])->name('dashboard');
+    Route::get('/detailanexamby/{id}', [ExamController::class, 'show']);
     Route::post('/createoneexam', [ExamController::class, 'store'])->name('createOneExam');
     Route::get('/deleteanexamby/{id}', [ExamController::class, 'destroy']);
 
@@ -65,7 +66,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('users', UserController::class);
 });
 
-Route::get('/detailanexamby/{id}', [ExamController::class, 'show']);
+
 
 // Auth::routes();
 Auth::routes(['verify' => true]);
