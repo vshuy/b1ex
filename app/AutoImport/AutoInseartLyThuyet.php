@@ -2,14 +2,8 @@
 
 namespace App\AutoImport;
 
-use App\cauhoi_lythuyet;
-use App\dapan_lythuyet;
-use App\Models\dapan;
-use App\Models\phan;
-use App\Models\dethi;
-use App\Models\tailieu_phan;
-use App\Models\cauhoi;
-use App\Models\tailieu_dapan;
+use App\Models\dapan_lythuyet;
+use App\Models\cauhoi_lythuyet;
 
 class AutoInseartLyThuyet
 {

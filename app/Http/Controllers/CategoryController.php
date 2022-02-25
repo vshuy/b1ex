@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\loai_lythuyet;
-use App\loai_tailieu_ta;
 use Illuminate\Http\Request;
+use App\Models\loai_lythuyet;
 use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller

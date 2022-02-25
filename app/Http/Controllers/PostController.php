@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\loai_lythuyet;
-use App\lythuyet;
+use App\Models\lythuyet;
 use Illuminate\Http\Request;
+use App\Models\loai_lythuyet;
 use Illuminate\Support\Facades\DB;
 use App\AutoImport\ReadSheetExcelForLyThuyet;
 

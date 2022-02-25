@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\fbaccess;
+use App\Models\fbaccess;
 use Dotenv\Result\Result;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

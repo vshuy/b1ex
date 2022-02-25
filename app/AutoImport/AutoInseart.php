@@ -2,11 +2,10 @@
 
 namespace App\AutoImport;
 
-use App\dethi_goc;
 use App\Models\phan;
 use App\Models\dapan;
-use App\Models\dethi;
 use App\Models\cauhoi;
+use App\Models\dethi_goc;
 use App\Models\tailieu_phan;
 use App\Models\tailieu_dapan;
 

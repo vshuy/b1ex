@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\lythuyet;
+use App\Models\lythuyet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 

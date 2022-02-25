@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\dethi_goc;
+use App\Models\dethi_goc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 

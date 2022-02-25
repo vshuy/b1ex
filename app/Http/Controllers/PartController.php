@@ -15,6 +15,7 @@ class PartController extends Controller
         $listde = dethi::all();
         return view('dashboard', ['listde' => $listde]);
     }
+
     public function deleteAnExamById($idde)
     {
         DB::table('dethis')->where('id', '=', $idde)->delete();
@@ -132,6 +133,7 @@ class PartController extends Controller
         ]);
         return $oneExam;
     }
+
     public function getPart1ById($idde)
     {
         return $this->getPartInforByExamIdAndPartName($idde, '1');
