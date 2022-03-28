@@ -82,10 +82,10 @@
                                         href="{{ route('uploadfilepage') }}">
                                         <span data-feather="home"></span> Tải lên một đề
                                     </a>
-                                    {{-- <a class="nav-link active" aria-current="page"
+                                    <a class="nav-link active" aria-current="page"
                                         href="{{ route('dashboardrootexam') }}">
                                         <span data-feather="home"></span> Quản lý đề gốc
-                                    </a> --}}
+                                    </a>
                                     <a class="nav-link active" aria-current="page" href="#" onclick="openForm()">
                                         <span data-feather="home"></span> Tạo một đề mới
                                     </a>
@@ -150,7 +150,7 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Name</th>
-                                <th> Xem chi tiết</th>
+                                <th>Xem chi tiết</th>
                                 <th>Xóa đề</th>
                             </tr>
                         </thead>
