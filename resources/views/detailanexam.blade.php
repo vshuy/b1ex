@@ -54,7 +54,7 @@
                     <div class="row">
                         <h6>Part1</h6>
                         <div class="colsm-12"> <img
-                                src="{{ url('/') . '/' . $oneExam[0]['listPartDocumentArray'][0]->url }}" alt="error">
+                                src="{{ $oneExam[0]['listPartDocumentArray'][0]->url }}" alt="error">
                         </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[0]['questions'] as $aItem)
@@ -64,13 +64,13 @@
                         <div class="col-sm-6">
                             @foreach ($oneExam[0]['document'] as $aItem)
                                 <div class="mt-3"> {{ $loop->iteration }} <img
-                                        src="{{ url('/') . '/' . $aItem->url }}" alt="error"></div>
+                                        src="{{ $aItem->url }}" alt="error"></div>
                             @endforeach
                         </div>
                         {{-- -----------------------------------------------part 2 ok no test this part------------------------------------------------------------- --}}
                         <h6>Part2</h6>
                         <div class="colsm-12"> <img
-                                src="{{ url('/') . '/' . $oneExam[1]['listPartDocumentArray'][0]->url }}"
+                                src="{{ $oneExam[1]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[1]['questions'] as $aItem)
@@ -85,7 +85,7 @@
                         {{-- -------------------------------------------------part 3.1 ok no test this part------------------------------------------------------------ --}}
                         <h6>Part3.1</h6>
                         <div class="colsm-12"> <img
-                                src="{{ url('/') . '/' . $oneExam[2]['listPartDocumentArray'][0]->url }}"
+                                src="{{ $oneExam[2]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[2]['questions'] as $aItem)
@@ -100,7 +100,7 @@
                         {{-- ---------------------------------------------------Part 3.2 ok no test this part----------------------------------- --}}
                         <h6>Part3.2</h6>
                         <div class="col-sm-5">
-                            <img src="{{ url('/') . '/' . $oneExam[3]['listPartDocumentArray'][0]->url }}"
+                            <img src="{{ $oneExam[3]['listPartDocumentArray'][0]->url }}"
                                 alt="error">
                         </div>
                         <div class="col-sm-7">
@@ -111,7 +111,7 @@
                         {{-- -----------------------------------------------------Part 4 ok no test this part--------------------------------- --}}
                         <h6>Part4</h6>
                         <div class="colsm-12"> <img
-                                src="{{ url('/') . '/' . $oneExam[4]['listPartDocumentArray'][0]->url }}"
+                                src="{{ $oneExam[4]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[4]['questions'] as $aItem)
@@ -126,7 +126,7 @@
                         {{-- ------------------------------------------Part 5 ok no test this part----------------------------------------------- --}}
                         <h6>Part5</h6>
                         <div class="col-sm-6"> <img
-                                src="{{ url('/') . '/' . $oneExam[5]['listPartDocumentArray'][0]->url }}"
+                                src="{{ $oneExam[5]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[5]['answers'] as $aItem)
@@ -137,7 +137,7 @@
                         {{-- ------------------------------------------Part 6 ok no test this part--------------------------------------- --}}
                         <h6>Part6</h6>
                         <div class="colsm-12"> <img
-                                src="{{ url('/') . '/' . $oneExam[6]['listPartDocumentArray'][0]->url }}"
+                                src="{{ $oneExam[6]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6">
                             @foreach ($oneExam[6]['questions'] as $aItem)
@@ -152,7 +152,7 @@
                         {{-- ----------------------------------------------Part 7 ok no test this part------------------------------------------ --}}
                         <h6>Part7</h6>
                         <div class="col-sm-6"> <img
-                                src="{{ url('/') . '/' . $oneExam[7]['listPartDocumentArray'][0]->url }}"
+                                src="{{ $oneExam[7]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-6 mt-5">
                             @foreach ($oneExam[7]['answers'] as $aItem)
@@ -163,7 +163,7 @@
                         {{-- ---------------------------------------------Part 8 ok no test this part--------------------------------------------------------------------- --}}
                         <h6>Part8</h6>
                         <div class="col-sm-5"> <img
-                                src="{{ url('/') . '/' . $oneExam[8]['listPartDocumentArray'][0]->url }}"
+                                src="{{ $oneExam[8]['listPartDocumentArray'][0]->url }}"
                                 alt="error"> </div>
                         <div class="col-sm-7">
                             @foreach ($oneExam[8]['answers'] as $aItem)
@@ -173,10 +173,10 @@
                         {{-- --------------------------------------------Part 9 OK no test this part----------------------------------------------------------------------- --}}
                         <h6>Part9</h6>
                         <div class="col-sm-5"> <img
-                                src="{{ url('/') . '/' . $oneExam[9]['listPartDocumentArray'][1]->url }}"
+                                src="{{ $oneExam[9]['listPartDocumentArray'][1]->url }}"
                                 alt="error">
                             <audio controls>
-                                <source src="{{ url('/') . '/' . $oneExam[9]['listPartDocumentArray'][0]->url }}"
+                                <source src="{{ $oneExam[9]['listPartDocumentArray'][0]->url }}"
                                     type="
                                     audio/mpeg">
                             </audio>
@@ -190,17 +190,17 @@
                             <div class="row">
                                 @foreach ($oneExam[9]['document'] as $aItem)
                                     <div class="col-4"> {{ $loop->iteration }} <img
-                                            src="{{ url('/') . '/' . $aItem->url }}" alt="error"></div>
+                                            src="{{ $aItem->url }}" alt="error"></div>
                                 @endforeach
                             </div>
                         </div>
                         {{-- ----------------------------------------------Part 10----OK no test this part---------------------------------------------------------------- --}}
                         <h6>Part10</h6>
                         <div class="col-sm-12"> <img
-                                src="{{ url('/') . '/' . $oneExam[10]['listPartDocumentArray'][1]->url }}"
+                                src="{{ $oneExam[10]['listPartDocumentArray'][1]->url }}"
                                 alt="error">
                             <audio controls>
-                                <source src="{{ url('/') . '/' . $oneExam[10]['listPartDocumentArray'][0]->url }}"
+                                <source src="{{ $oneExam[10]['listPartDocumentArray'][0]->url }}"
                                     type="
                                         audio/mpeg">
                             </audio>
@@ -218,10 +218,10 @@
                         {{-- -----------------------------------------------Part 11---Ok no test this part---------------------------------------- --}}
                         <h6>Part11</h6>
                         <div class="col-sm-12"> <img
-                                src="{{ url('/') . '/' . $oneExam[11]['listPartDocumentArray'][1]->url }}"
+                                src="{{ $oneExam[11]['listPartDocumentArray'][1]->url }}"
                                 alt="error">
                             <audio controls>
-                                <source src="{{ url('/') . '/' . $oneExam[11]['listPartDocumentArray'][0]->url }}"
+                                <source src="{{ $oneExam[11]['listPartDocumentArray'][0]->url }}"
                                     type="
                                         audio/mpeg">
                             </audio>
@@ -239,10 +239,10 @@
                         {{-- --------------------------------------------------Part 12 ok no test this part----------------------------------- --}}
                         <h6>Part12</h6>
                         <div class="col-sm-6"> <img
-                                src="{{ url('/') . '/' . $oneExam[12]['listPartDocumentArray'][1]->url }}"
+                                src="{{ $oneExam[12]['listPartDocumentArray'][1]->url }}"
                                 alt="error">
                             <audio controls>
-                                <source src="{{ url('/') . '/' . $oneExam[12]['listPartDocumentArray'][0]->url }}"
+                                <source src="{{ $oneExam[12]['listPartDocumentArray'][0]->url }}"
                                     type="
                                         audio/mpeg">
                             </audio>
@@ -255,10 +255,10 @@
                         {{-- ------------------------------------------------------------------------------------------------------------------ --}}
                         <h6>Part13</h6>
                         <div class="col-sm-6"> <img
-                                src="{{ url('/') . '/' . $oneExam[13]['listPartDocumentArray'][1]->url }}"
+                                src="{{ $oneExam[13]['listPartDocumentArray'][1]->url }}"
                                 alt="error">
                             <audio controls>
-                                <source src="{{ url('/') . '/' . $oneExam[13]['listPartDocumentArray'][0]->url }}"
+                                <source src="{{ $oneExam[13]['listPartDocumentArray'][0]->url }}"
                                     type="
                                         audio/mpeg">
                             </audio>
