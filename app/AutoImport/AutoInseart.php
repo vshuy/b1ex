@@ -8,7 +8,7 @@ use App\Models\cauhoi;
 use App\Models\dethi_goc;
 use App\Models\tailieu_phan;
 use App\Models\tailieu_dapan;
-
+use Cloudinary\Cloudinary;
 class AutoInseart
 {
     public function inseartMotDetThiGoc($tende)
@@ -29,7 +29,8 @@ class AutoInseart
             $filename = $afile->getClientOriginalName();
             if ($filename == $name) {
                 $exfile = $afile->getClientOriginalExtension();
-                $path = $afile->store('datafordb');
+                $result = $afile->storeOnCloudinary();
+                $path = $result->getSecurePath();
             }
         }
         if ($exfile == "mp3") {
@@ -55,7 +56,8 @@ class AutoInseart
             $filename = $afile->getClientOriginalName();
             if ($filename == $name) {
                 $exfile = $afile->getClientOriginalExtension();
-                $path = $afile->store('datafordb');
+                $result = $afile->storeOnCloudinary();
+                $path = $result->getSecurePath();
             }
         }
         if ($exfile == "mp3") {
