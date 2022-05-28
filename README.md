@@ -6,6 +6,8 @@ Our common API:
  Detail a exam:  http://b1ex.herokuapp.com/api/getoneexam/1  
   
  DETAIL BY A SPECIFIC PART OF A EXAM  
+ You can see our template api here https://github.com/vshuy/b1ex/blob/main/routes/api.php  
+ 
  part1 of exam: http://b1ex.herokuapp.com/api/getpart1/1   
  part2 of exam: http://b1ex.herokuapp.com/api/getpart2/1   
  part3.1 of exam: http://b1ex.herokuapp.com/api/getpart3.1/1   
