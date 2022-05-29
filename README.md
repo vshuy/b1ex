@@ -21,7 +21,11 @@ Our common API:
  part10 of exam: http://b1ex.herokuapp.com/api/getpart10/1   
  part11 of exam: http://b1ex.herokuapp.com/api/getpart11/1   
  part12 of exam: http://b1ex.herokuapp.com/api/getpart12/1   
- part13 of exam: http://b1ex.herokuapp.com/api/getpart13/1   
+ part13 of exam: http://b1ex.herokuapp.com/api/getpart13/1  
+
+ 
+Get list documents: http://b1ex.herokuapp.com/api/getlistlythuyet   
+Get detail an document: http://b1ex.herokuapp.com/api/getdetaillythuyetby/1   
 
 Our useful source code for frontend  
 React Native App side https://github.com/nguyenminhbgbg/E_learning  
