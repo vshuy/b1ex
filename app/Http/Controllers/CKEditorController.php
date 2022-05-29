@@ -10,13 +10,12 @@ class CKEditorController extends Controller
     {
         if ($request->hasFile('upload')) {
 
-            $path = $request->file('upload')->store('datafordoc');
+            $result = $request->file('upload')->storeOnCloudinary();
+            $url = $result->getSecurePath();
             ///////////////////////
             $CKEditorFuncNum = $request->input('CKEditorFuncNum');
 
             $msg = 'Image successfully uploaded';
-            $host = $request->getSchemeAndHttpHost();
-            $url = $host . "/" . $path;
             $re = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
 
             // Render HTML output
