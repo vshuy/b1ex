@@ -29,5 +29,6 @@ Get detail an document: http://b1ex.herokuapp.com/api/getdetaillythuyetby/1
 
 Our useful source code for frontend  
 React Native App side https://github.com/nguyenminhbgbg/E_learning  
-ReactJs Website https://github.com/minhtien99tn/TTNN
+ReactJs Website https://github.com/minhtien99tn/TTNN  
+APK file React Native APP size 36MB https://1drv.ms/u/s!ArIU2QxPsuECkWsIJ5waMrpoFUwU?e=wHDOnJ
   
