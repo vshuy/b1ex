@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: b1ex
-    container_name: app
+    container_name: b1ex-app
     restart: unless-stopped
     tty: true
     environment:
@@ -23,7 +23,7 @@ services:
   #Nginx Service
   b1ex-webserver:
     image: nginx:alpine
-    container_name: webserver
+    container_name: b1ex-webserver
     restart: unless-stopped
     tty: true
     ports:
