@@ -18,7 +18,7 @@ services:
       - ./:/var/www
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
-      - b1ex-app-network
+      - app-network
 
   #Nginx Service
   b1ex-webserver:
@@ -32,10 +32,10 @@ services:
       - ./:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     networks:
-      - b1ex-app-network
+      - app-network
 #Docker Networks
 networks:
-  b1ex-app-network:
+  app-network:
     driver: bridge
 #Volumes
 volumes:

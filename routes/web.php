@@ -30,7 +30,7 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    return "good i'm already ok";
+    return "b1ex good i'm already ok";
 });
 
 Route::middleware(['auth'])->group(function () {
