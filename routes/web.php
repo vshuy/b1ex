@@ -29,6 +29,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', function () {
+    return "good i'm already ok";
+});
+
 Route::middleware(['auth'])->group(function () {
     /////////////////------------Upload resource region ------- Rest Full API template ---------------------------
     Route::get('/uploadfilepage', [UploadController::class, 'create'])->name('uploadfilepage');
