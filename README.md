@@ -1,6 +1,6 @@
 This system to experiment teamwork and help student improve their english skills.
 Our endpoints common API you can use for your project to make your custom exams  
-PREVIEW AN EXAM http://b1ex.herokuapp.com/detailanexamby/1  
+PREVIEW AN EXAM https://nikba.tk/detailanexamby/1  
 Our common API:   
  List exams:  https://nikba.tk/api/getlistde  
  Detail a exam:  https://nikba.tk/api/getoneexam/1  
