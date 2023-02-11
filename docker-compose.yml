@@ -45,7 +45,7 @@ services:
       - b1-app-network
 #Docker Networks
 networks:
-  app-network:
+  b1-app-network:
     driver: bridge
 #Volumes
 volumes:
