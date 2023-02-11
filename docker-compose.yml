@@ -1,6 +1,5 @@
-version: '3'
+version: "3"
 services:
-
   #PHP Service
   b1ex-app:
     build:
@@ -18,8 +17,19 @@ services:
       - ./:/var/www
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
-      - app-network
-
+      - b1-app-network
+  #Cache Service
+  redis:
+    image: redis:alpine
+    container_name: myapp-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --requirepass 12344321
+    volumes:
+      - ./data/redis:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - b1-app-network
   #Nginx Service
   b1ex-webserver:
     image: nginx:alpine
@@ -27,12 +37,12 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "8081:8000"  #8080 is post of real machine, 8000 is the posrt where NGNIX lisning
+      - "8081:8000" #8080 is post of real machine, 8000 is the posrt where NGNIX lisning
     volumes:
       - ./:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     networks:
-      - app-network
+      - b1-app-network
 #Docker Networks
 networks:
   app-network:
