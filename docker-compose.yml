@@ -21,7 +21,7 @@ services:
   #Cache Service
   redis:
     image: redis:alpine
-    container_name: myapp-redis
+    container_name: myapp-b1ex-redis
     restart: unless-stopped
     command: redis-server --appendonly yes --requirepass 12344321
     volumes:
