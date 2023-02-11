@@ -27,7 +27,7 @@ services:
     volumes:
       - ./data/redis:/data
     ports:
-      - "6379:6379"
+      - "6378:6379"
     networks:
       - b1-app-network
   #Nginx Service
