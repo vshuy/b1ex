@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redis;
 
 class PartController extends Controller
 {
@@ -115,22 +116,30 @@ class PartController extends Controller
 
     public function getOneExamById($idde)
     {
-        $oneExam = collect([
-            "part1" => $this->getPartInforByExamIdAndPartName($idde, '1'),
-            "part2" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '2'),
-            "part3dot1" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '3.1'),
-            "part3dot2" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '3.2'),
-            "part4" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '4'),
-            "part5" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '5'),
-            "part6" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '6'),
-            "part7" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '7'),
-            "part8" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '8'),
-            "part9" => $this->getPartInforByExamIdAndPartName($idde, '9'),
-            "part10" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '10'),
-            "part11" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '11'),
-            "part12" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '12'),
-            "part13" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '13'),
-        ]);
+        $oneExam = null;
+        $one_exam_rd = Redis::get('exam_' . $idde);
+        if (isset($one_exam_rd)) {
+            $oneExam = json_decode($one_exam_rd, true);
+        } else {
+            $oneExam = collect([
+                "part1" => $this->getPartInforByExamIdAndPartName($idde, '1'),
+                "part2" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '2'),
+                "part3dot1" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '3.1'),
+                "part3dot2" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '3.2'),
+                "part4" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '4'),
+                "part5" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '5'),
+                "part6" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '6'),
+                "part7" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '7'),
+                "part8" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '8'),
+                "part9" => $this->getPartInforByExamIdAndPartName($idde, '9'),
+                "part10" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '10'),
+                "part11" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '11'),
+                "part12" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '12'),
+                "part13" => $this->getPartInforByExamIdAndPartNameNoImg($idde, '13'),
+            ]);
+            Redis::set('exam_' . $idde, json_encode($oneExam));
+        }
+
         return $oneExam;
     }
 

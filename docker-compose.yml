@@ -19,7 +19,7 @@ services:
     networks:
       - b1-app-network
   #Cache Service
-  redis:
+  redisb1ex:
     image: redis:alpine
     container_name: myapp-b1ex-redis
     restart: unless-stopped

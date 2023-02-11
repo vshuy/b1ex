@@ -5,12 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\dethi;
 use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Expr\Cast\Array_;
+use Illuminate\Support\Facades\Redis;
 
 class DethiController extends Controller
 {
     public function getListDe()
     {
         $listde = dethi::all();
+        $exams_rd = Redis::get('exams_');
+            if (isset($exams_rd)) {
+                $listde = json_decode($exams_rd, true);
+            } else {
+                $listde = dethi::all();
+                Redis::set('exams_', json_encode($listde));
+            }
         return $listde->toJson();
     }
     public function exSavePartByExamIdAndPartName($exam_id, $part_name) //ok notest this part
