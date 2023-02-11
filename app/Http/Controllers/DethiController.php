@@ -13,13 +13,13 @@ class DethiController extends Controller
     {
         $listde = dethi::all();
         $exams_rd = Redis::get('exams_');
-            if (isset($exams_rd)) {
-                $listde = json_decode($exams_rd, true);
-            } else {
-                $listde = dethi::all();
-                Redis::set('exams_', json_encode($listde));
-            }
-        return $listde->toJson();
+        if (isset($exams_rd)) {
+            $listde = json_decode($exams_rd, true);
+        } else {
+            $listde = dethi::all();
+            Redis::set('exams_', json_encode($listde));
+        }
+        return $listde;
     }
     public function exSavePartByExamIdAndPartName($exam_id, $part_name) //ok notest this part
     {
